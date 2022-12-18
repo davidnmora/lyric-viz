@@ -1,15 +1,15 @@
-export const CONTINUOUS_FIELD = "year_month_decimal_timestamp_normalized";
-export const CATAGORICAL_FIELD = "assignee";
+export const CONTINUOUS_FIELD = "chart_debut_date_normalized_0_to_1";
+export const CATAGORICAL_FIELD = "generic_genre";
 export const CATAGORICAL_ENCODING = "color";
-export const ANOTHER_CATAGORICAL_VAR_IN_ORDINAL_BANDS = "creator_ranked";
-export const ID_FIELD = "issue_key";
+export const ANOTHER_CATAGORICAL_VAR_IN_ORDINAL_BANDS = "genre_position_band";
+export const ID_FIELD = "song_id";
 export const X_TEXT_EMBEDDING = "x";
 export const Y_TEXT_EMBEDDING = "y";
 
 export const CONTINUOUS_LOWER_BOUND = 0;
 export const CONTINUOUS_UPPER_BOUND = 1;
 
-export const TILES_FOLDER_NAME_IN_PUBLIC = "tiles";
+export const TILES_FOLDER_NAME_IN_PUBLIC = "deepscatter-tiles";
 
 export const deepscatterInitialPrefs = {
   // source_url: `https://benschmidt.org/arxiv/`,
@@ -18,7 +18,7 @@ export const deepscatterInitialPrefs = {
   max_points: 10000, // a full cap.
   alpha: 500, // Target saturation for the full page.
   zoom_balance: 0.7, // Rate at which points increase size. https://observablehq.com/@bmschmidt/zoom-strategies-for-huge-scatterplots-with-three-js
-  point_size: 24, // Default point size before application of size scaling
+  point_size: 6, // Default point size before application of size scaling
   background_color: "#ffffff",
   click_function: "console.log(JSON.stringify(datum, undefined, 2))",
   duration: 1000, // zoom duration

@@ -78,6 +78,7 @@ const labeledSteps: { [key: string]: Omit<StoryStep, "index"> } = {
     zoomTo: mapLocations.overview,
     prefsUpdate: prefsUpdates.xyEncodingNoFilters,
   },
+  // FOR REFERENCE: NOT USED:
   groupedByCreatorOnTheYAxis: {
     content:
       "Let's group tickets into rows based on their creator, sorted low-high by most-least created",
@@ -122,13 +123,13 @@ const labeledSteps: { [key: string]: Omit<StoryStep, "index"> } = {
 
 const storySteps: Array<Omit<StoryStep, "index">> = [
   labeledSteps.welcomeToTheViz,
-  labeledSteps.groupedByCreatorOnTheYAxis,
-  labeledSteps.groupedByCreatorOnTheYAxisAndTimeOnX,
-  labeledSteps.zoomingIntoVelikoWorkCluster,
-  labeledSteps.velikoLeadsExCo,
-  labeledSteps.davidLeadsPhase2,
-  labeledSteps.zoomOut,
-  labeledSteps.goodbye,
+  // labeledSteps.groupedByCreatorOnTheYAxis,
+  // labeledSteps.groupedByCreatorOnTheYAxisAndTimeOnX,
+  // labeledSteps.zoomingIntoVelikoWorkCluster,
+  // labeledSteps.velikoLeadsExCo,
+  // labeledSteps.davidLeadsPhase2,
+  // labeledSteps.zoomOut,
+  // labeledSteps.goodbye,
 ];
 
 export default addStepIndexes(storySteps);
