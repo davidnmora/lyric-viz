@@ -86,7 +86,7 @@ const MultiRangeSliderComp = ({
     <MultiRangeSlider
       min={lowerBound}
       max={upperBound}
-      step={0.1}
+      step={0.01}
       minValue={minValue}
       maxValue={maxValue}
       onInput={handleMultiRangeSliderInput}

@@ -9,16 +9,16 @@ export const Y_TEXT_EMBEDDING = "y";
 export const CONTINUOUS_LOWER_BOUND = 0;
 export const CONTINUOUS_UPPER_BOUND = 1;
 
-export const TILES_FOLDER_NAME_IN_PUBLIC = "deepscatter-tiles";
+export const TILES_FOLDER_NAME_IN_PUBLIC = "deepscatter-tiles-1k-per-tile";
 
 export const deepscatterInitialPrefs = {
   // source_url: `https://benschmidt.org/arxiv/`,
   source_url: `${window.location.origin}/${TILES_FOLDER_NAME_IN_PUBLIC}`, // tiles live in /public in react app
   // source_url: `/tiles`,
-  max_points: 10000, // a full cap.
+  max_points: 500000, // a full cap.
   alpha: 500, // Target saturation for the full page.
   zoom_balance: 0.7, // Rate at which points increase size. https://observablehq.com/@bmschmidt/zoom-strategies-for-huge-scatterplots-with-three-js
-  point_size: 6, // Default point size before application of size scaling
+  point_size: 4, // Default point size before application of size scaling
   background_color: "#ffffff",
   click_function: "console.log(JSON.stringify(datum, undefined, 2))",
   duration: 1000, // zoom duration

@@ -30,12 +30,17 @@ const Scrollytelling = ({
         width: SCROLL_AREA_WIDTH,
         position: "relative",
 
-        paddingTop: "25vh",
-        paddingBottom: "25vh",
+        paddingTop: isOpen ? "25vh" : 0,
+        paddingBottom: isOpen ? "25vh" : 0,
 
         height: isOpen ? undefined : 0,
       }}
     >
+      <div style={{ position: "fixed", top: 0 }}>
+        <button onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? "Close" : "Open"} scrollytelling
+        </button>
+      </div>
       <div
         style={{
           visibility: isOpen ? "visible" : "hidden",
@@ -60,11 +65,6 @@ const Scrollytelling = ({
             </Step>
           ))}
         </Scrollama>
-      </div>
-      <div style={{ position: "fixed", top: 0 }}>
-        <button onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? "Close" : "Open"} scrollytelling
-        </button>
       </div>
     </div>
   );
