@@ -21,4 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-src/deepscatter-dist-for-ease-of-access-and-edit.js
+# src/deepscatter-dist-for-ease-of-access-and-edit.js
+public/_deepscatter_tmp/0.feather
+/public/*.csv

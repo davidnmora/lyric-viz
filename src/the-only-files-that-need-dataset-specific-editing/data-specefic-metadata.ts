@@ -40,3 +40,23 @@ export const deepscatterInitialPrefs = {
     },
   },
 };
+
+type DataPoint = {
+  lyric_line: string;
+  song: string;
+  performer: string;
+  generic_genre: string;
+  chart_debut: string; // I think? maybe it's been cast when the parquet file is read?
+};
+
+export const tooltipHTML = (point: DataPoint): string => {
+  return `
+    <div style="width: 400px; z-index: 99;">
+      <h4>${point.lyric_line}</h4>
+      <div>${point.song}</div>
+      <div>${point.performer}</div>
+      <div>${point.generic_genre}</div>
+      <div>${point.chart_debut}</div>
+    </div>
+`;
+};

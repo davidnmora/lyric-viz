@@ -1,5 +1,8 @@
 import { createContext, useEffect, useMemo, useRef, useState } from "react";
-import ScatterPlot from "./deepscatter-dist-for-ease-of-access-and-edit";
+// @ts-ignore
+import ScatterPlot from "./deepscatter-dist-for-ease-of-access-and-edit.js";
+
+export type TooltipHTMLGenerator = (point: any) => string;
 
 export const DeepScatterContext = createContext<any>({});
 
@@ -72,10 +75,12 @@ const parentDivStyle = {
 const DeepScatterWrapper = ({
   plotRef,
   prefs,
+  tooltipHTML,
   children,
 }: {
   plotRef: any;
   prefs: Object;
+  tooltipHTML: TooltipHTMLGenerator;
   children: any;
 }) => {
   const [initialLoadComplete, setInitiaLoadComplete] = useState<boolean>(false);
@@ -85,15 +90,17 @@ const DeepScatterWrapper = ({
   useEffect(() => {
     if (chartParentRef.current && !plotRef?.current) {
       const _plot = new ScatterPlot(`#${chartParentId}`);
+      _plot.tooltip_html = tooltipHTML;
       plotRef.current = _plot;
       // @ts-ignore
       window.plot = _plot; // for debuggin
-      console.log("created scatter!!");
-
-      console.log("updating prefs!!!");
-      plotRef.current.plotAPI(prefs).finally(() => setInitiaLoadComplete(true));
+      console.log("created scatter...");
+      plotRef.current.plotAPI(prefs).finally(() => {
+        console.log("... initial prefs set");
+        setInitiaLoadComplete(true);
+      });
     }
-  }, [chartParentId, plotRef, chartParentRef, prefs]);
+  }, [chartParentId, plotRef, chartParentRef, prefs, tooltipHTML]);
 
   const providerState = useMemo(
     () => ({ initialLoadComplete, plotRef }),

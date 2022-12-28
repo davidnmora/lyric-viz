@@ -7,8 +7,9 @@ import {
   CONTINUOUS_LOWER_BOUND,
   CONTINUOUS_UPPER_BOUND,
   deepscatterInitialPrefs,
+  tooltipHTML,
 } from "./the-only-files-that-need-dataset-specific-editing/data-specefic-metadata";
-import ScatterPlot from "./deepscatter-dist-for-ease-of-access-and-edit";
+import ScatterPlot from "./deepscatter-dist-for-ease-of-access-and-edit.js";
 import DeepScatterWrapper, {
   generateCatagoricalFilter,
   generateRangeFilterObject,
@@ -74,7 +75,11 @@ function App() {
   return (
     <>
       <div style={{ width: "100%", height: "100%" }}>
-        <DeepScatterWrapper plotRef={plotRef} prefs={deepscatterInitialPrefs}>
+        <DeepScatterWrapper
+          plotRef={plotRef}
+          prefs={deepscatterInitialPrefs}
+          tooltipHTML={tooltipHTML}
+        >
           <Controls
             rangeSliderProps={rangeSliderProps}
             catagoricalField={CATAGORICAL_FIELD}
