@@ -56,7 +56,16 @@ export const tooltipHTML = (point: DataPoint): string => {
       <div>${point.song}</div>
       <div>${point.performer}</div>
       <div>${point.generic_genre}</div>
-      <div>${point.chart_debut}</div>
+      <div>${new Date(point.chart_debut).getFullYear()}</div>
     </div>
 `;
+};
+
+export const onClickDataPoint = (point: DataPoint) => {
+  const youtubeSearchURL =
+    `https://www.youtube.com/results?search_query=${point.song}+by+${point.performer}`.replace(
+      " ",
+      "+"
+    );
+  window.open(youtubeSearchURL, "_blank");
 };

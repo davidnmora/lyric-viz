@@ -2,7 +2,8 @@ import { createContext, useEffect, useMemo, useRef, useState } from "react";
 // @ts-ignore
 import ScatterPlot from "./deepscatter-dist-for-ease-of-access-and-edit.js";
 
-export type TooltipHTMLGenerator = (point: any) => string;
+type TooltipHTMLGenerator = (point: any) => string;
+type DataPointClickHandler = (point: any) => void;
 
 export const DeepScatterContext = createContext<any>({});
 
@@ -76,11 +77,13 @@ const DeepScatterWrapper = ({
   plotRef,
   prefs,
   tooltipHTML,
+  onClickDataPoint,
   children,
 }: {
   plotRef: any;
   prefs: Object;
-  tooltipHTML: TooltipHTMLGenerator;
+  tooltipHTML?: TooltipHTMLGenerator;
+  onClickDataPoint?: DataPointClickHandler;
   children: any;
 }) => {
   const [initialLoadComplete, setInitiaLoadComplete] = useState<boolean>(false);
@@ -90,7 +93,8 @@ const DeepScatterWrapper = ({
   useEffect(() => {
     if (chartParentRef.current && !plotRef?.current) {
       const _plot = new ScatterPlot(`#${chartParentId}`);
-      _plot.tooltip_html = tooltipHTML;
+      if (tooltipHTML) _plot.tooltip_html = tooltipHTML;
+
       plotRef.current = _plot;
       // @ts-ignore
       window.plot = _plot; // for debuggin
@@ -98,9 +102,17 @@ const DeepScatterWrapper = ({
       plotRef.current.plotAPI(prefs).finally(() => {
         console.log("... initial prefs set");
         setInitiaLoadComplete(true);
+        if (onClickDataPoint) _plot.click_function = onClickDataPoint;
       });
     }
-  }, [chartParentId, plotRef, chartParentRef, prefs, tooltipHTML]);
+  }, [
+    chartParentId,
+    plotRef,
+    chartParentRef,
+    prefs,
+    tooltipHTML,
+    onClickDataPoint,
+  ]);
 
   const providerState = useMemo(
     () => ({ initialLoadComplete, plotRef }),

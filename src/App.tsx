@@ -7,6 +7,7 @@ import {
   CONTINUOUS_LOWER_BOUND,
   CONTINUOUS_UPPER_BOUND,
   deepscatterInitialPrefs,
+  onClickDataPoint,
   tooltipHTML,
 } from "./the-only-files-that-need-dataset-specific-editing/data-specefic-metadata";
 import ScatterPlot from "./deepscatter-dist-for-ease-of-access-and-edit.js";
@@ -79,6 +80,7 @@ function App() {
           plotRef={plotRef}
           prefs={deepscatterInitialPrefs}
           tooltipHTML={tooltipHTML}
+          onClickDataPoint={onClickDataPoint}
         >
           <Controls
             rangeSliderProps={rangeSliderProps}
