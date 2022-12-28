@@ -31,13 +31,14 @@ const mapLocations = {
 };
 
 const prefsUpdates = {
-  noFilters: { encoding: { filter: {}, filter2: {} } },
+  noFilters: { encoding: { filter: {}, filter2: {}, jitter_radius: {} } },
   xyEncodingNoFilters: {
     encoding: {
       x: { field: X_TEXT_EMBEDDING },
       y: { field: Y_TEXT_EMBEDDING },
       filter: {},
       filter2: {},
+      jitter_radius: {},
     },
   },
   justOneJiraIssue: {
@@ -48,25 +49,20 @@ const prefsUpdates = {
       },
     },
   },
-  groupedByCreatorOnTheYAxis: {
-    encoding: {
-      y: {
-        field: ANOTHER_CATAGORICAL_VAR_IN_ORDINAL_BANDS,
-      },
-      x: {
-        field: X_TEXT_EMBEDDING,
-      },
-    },
-  },
-  goupedByCreatorOnTheYAxisAndTimeOnX: {
+  timeOnTheXAndGenreBinOnY: {
     encoding: {
       y: {
         field: ANOTHER_CATAGORICAL_VAR_IN_ORDINAL_BANDS,
       },
       x: {
         field: CONTINUOUS_FIELD,
-        domain: [2019, 2023],
-        range: [0, 1],
+      },
+      jitter_radius: {
+        constant: 0.01,
+        method: "uniform",
+      },
+      jitter_speed: {
+        constant: 0,
       },
     },
   },
@@ -78,58 +74,16 @@ const labeledSteps: { [key: string]: Omit<StoryStep, "index"> } = {
     zoomTo: mapLocations.overview,
     prefsUpdate: prefsUpdates.xyEncodingNoFilters,
   },
-  // FOR REFERENCE: NOT USED:
-  groupedByCreatorOnTheYAxis: {
-    content:
-      "Let's group tickets into rows based on their creator, sorted low-high by most-least created",
+  timeOnTheXAndGenreBinOnY: {
+    content: "... and now let's make the x-axis time, genre on Y.",
     zoomTo: mapLocations.overview,
-    prefsUpdate: prefsUpdates.groupedByCreatorOnTheYAxis,
-  },
-  groupedByCreatorOnTheYAxisAndTimeOnX: {
-    content:
-      "... and now let's make the x-axis time, so we can see each ticket-creator's output over time.",
-    zoomTo: mapLocations.overview,
-    prefsUpdate: prefsUpdates.goupedByCreatorOnTheYAxisAndTimeOnX,
-  },
-  zoomingIntoVelikoWorkCluster: {
-    content:
-      "You can see Veliko's big push of tickets regarding his Nudge Spotlight component (largely assigned to himself)",
-    zoomTo: mapLocations.velikoWorkCluster,
-    prefsUpdate: prefsUpdates.goupedByCreatorOnTheYAxisAndTimeOnX,
-  },
-  velikoLeadsExCo: {
-    content:
-      "... Veliko creates many tickets again as he starts leading ExCo, this time assigning them widely. #delegation",
-    zoomTo: mapLocations.velikoLeadsExCo,
-    prefsUpdate: prefsUpdates.goupedByCreatorOnTheYAxisAndTimeOnX,
-  },
-  davidLeadsPhase2: {
-    content:
-      "... Veliko then passes off Phase Leading to David, but still creates tickets himself for the larger exploration. #evenMoreDelegation",
-    zoomTo: mapLocations.davidLeadsPhase2,
-    prefsUpdate: prefsUpdates.goupedByCreatorOnTheYAxisAndTimeOnX,
-  },
-  zoomOut: {
-    content: "Zooming out again...",
-    zoomTo: mapLocations.overview,
-  },
-  goodbye: {
-    content:
-      "... and then reseting to topic groupings, we can continue to explore with filters.",
-    zoomTo: mapLocations.overview,
-    prefsUpdate: prefsUpdates.xyEncodingNoFilters,
+    prefsUpdate: prefsUpdates.timeOnTheXAndGenreBinOnY,
   },
 };
 
 const storySteps: Array<Omit<StoryStep, "index">> = [
   labeledSteps.welcomeToTheViz,
-  // labeledSteps.groupedByCreatorOnTheYAxis,
-  // labeledSteps.groupedByCreatorOnTheYAxisAndTimeOnX,
-  // labeledSteps.zoomingIntoVelikoWorkCluster,
-  // labeledSteps.velikoLeadsExCo,
-  // labeledSteps.davidLeadsPhase2,
-  // labeledSteps.zoomOut,
-  // labeledSteps.goodbye,
+  labeledSteps.timeOnTheXAndGenreBinOnY,
 ];
 
 export default addStepIndexes(storySteps);
