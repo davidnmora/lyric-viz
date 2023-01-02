@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/lyric-viz/static/css/main.80aa37ad.css",
-    "main.js": "/lyric-viz/static/js/main.83baea78.js",
+    "main.js": "/lyric-viz/static/js/main.42c66e60.js",
     "index.html": "/lyric-viz/index.html",
     "main.80aa37ad.css.map": "/lyric-viz/static/css/main.80aa37ad.css.map",
-    "main.83baea78.js.map": "/lyric-viz/static/js/main.83baea78.js.map"
+    "main.42c66e60.js.map": "/lyric-viz/static/js/main.42c66e60.js.map"
   },
   "entrypoints": [
     "static/css/main.80aa37ad.css",
-    "static/js/main.83baea78.js"
+    "static/js/main.42c66e60.js"
   ]
 }
