@@ -20,7 +20,6 @@ export const deepscatterInitialPrefs = {
   zoom_balance: 0.7, // Rate at which points increase size. https://observablehq.com/@bmschmidt/zoom-strategies-for-huge-scatterplots-with-three-js
   point_size: 4, // Default point size before application of size scaling
   background_color: "#ffffff",
-  click_function: "console.log(JSON.stringify(datum, undefined, 2))",
   duration: 1000, // zoom duration
 
   // encoding API based off of Vega Lite: https://vega.github.io/vega-lite/docs/encoding.html
