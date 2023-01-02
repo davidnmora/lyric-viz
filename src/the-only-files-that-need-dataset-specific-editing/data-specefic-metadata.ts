@@ -11,9 +11,11 @@ export const CONTINUOUS_UPPER_BOUND = 1;
 
 export const TILES_FOLDER_NAME_IN_PUBLIC = "deepscatter-tiles-10k-per-tile";
 
+const ROOT_REPO_NAME = "lyric-viz"; // N0TE: served, not from "/", but from "/lyric-viz/" on gh-pages
+
 export const deepscatterInitialPrefs = {
   // source_url: `https://benschmidt.org/arxiv/`,
-  source_url: `${window.location.origin}/${TILES_FOLDER_NAME_IN_PUBLIC}`, // tiles live in /public in react app
+  source_url: `${window.location.origin}/${ROOT_REPO_NAME}/${TILES_FOLDER_NAME_IN_PUBLIC}`, // tiles live in /public in react app
   // source_url: `/tiles`,
   max_points: 500000, // a full cap.
   alpha: 500, // Target saturation for the full page.
