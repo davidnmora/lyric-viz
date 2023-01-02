@@ -13,7 +13,7 @@ const Scrollytelling = ({
   updatePlotOnStepChange: any;
 }) => {
   const [currentStepIndex, setCurrentStepIndex] = useState<number | null>(null);
-  const [isOpen, setIsOpen] = useState<boolean>(true);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   // This callback fires when a Step hits the offset threshold. It receives the
   // data prop of the step, which in this demo stores the index of the step.
