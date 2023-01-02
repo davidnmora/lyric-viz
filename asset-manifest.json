@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/lyric-viz/static/css/main.80aa37ad.css",
+    "main.js": "/lyric-viz/static/js/main.32f3a4a2.js",
+    "index.html": "/lyric-viz/index.html",
+    "main.80aa37ad.css.map": "/lyric-viz/static/css/main.80aa37ad.css.map",
+    "main.32f3a4a2.js.map": "/lyric-viz/static/js/main.32f3a4a2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.80aa37ad.css",
+    "static/js/main.32f3a4a2.js"
+  ]
+}
