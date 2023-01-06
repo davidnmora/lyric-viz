@@ -16,17 +16,13 @@ const mapLocations = {
     x: [0.5074450273282145, 0.594718790487779],
     y: [0.7049463248931738, 0.7728779733647674],
   },
-  velikoWorkCluster: {
-    x: [-0.03602058334786954, 0.33322952138025136],
-    y: [-0.054196163878602266, 0.155155457998502],
+  blingTown: {
+    x: [0.352932844653939, 0.4166393297242866],
+    y: [0.4070743109364665, 0.4431707417037659],
   },
-  velikoLeadsExCo: {
-    x: [0.5575550179849789, 1.1313188969984367],
-    y: [-0.08677233946584362, 0.23853128836767926],
-  },
-  davidLeadsPhase2: {
-    x: [0.8385588678824869, 1.0517749062776807],
-    y: [0.008125333957437334, 0.12901121286899825],
+  feelingsFalls: {
+    x: [0.4575146597836081, 0.7486141162637061],
+    y: [0.2681981523384174, 0.4331366411850291],
   },
 };
 
@@ -70,12 +66,32 @@ const prefsUpdates = {
 
 const labeledSteps: { [key: string]: Omit<StoryStep, "index"> } = {
   welcomeToTheViz: {
-    content: "Welcome to the map",
+    content:
+      "Welcome to the map: each dot is 1 of 166,000 lyric lines, arranged by topic via sentence embedding. Click a dot to open that song in YouTube.",
+    zoomTo: mapLocations.overview,
+    prefsUpdate: prefsUpdates.xyEncodingNoFilters,
+  },
+  blingTown: {
+    content:
+      "This is Bling Town: (left to right) chains, watches, diamonds, gold, ice...",
+    zoomTo: mapLocations.blingTown,
+    prefsUpdate: prefsUpdates.xyEncodingNoFilters,
+  },
+  feelingsFalls: {
+    content:
+      "Less superficially, this is Feelings Falls: a cluster of emotion-related themes, cascading down till the lower center cluster typified by lyrics like 'How I feel'.",
+    zoomTo: mapLocations.feelingsFalls,
+    prefsUpdate: prefsUpdates.xyEncodingNoFilters,
+  },
+  zoomBackOut: {
+    content:
+      "... and we can animate these points into new arrangements as well... scroll on!",
     zoomTo: mapLocations.overview,
     prefsUpdate: prefsUpdates.xyEncodingNoFilters,
   },
   timeOnTheXAndGenreBinOnY: {
-    content: "... and now let's make the x-axis time, genre on Y.",
+    content:
+      "There are other ways to view visualize the lyrics: here the the X-axis is time, genre is on the Y.",
     zoomTo: mapLocations.overview,
     prefsUpdate: prefsUpdates.timeOnTheXAndGenreBinOnY,
   },
@@ -83,6 +99,9 @@ const labeledSteps: { [key: string]: Omit<StoryStep, "index"> } = {
 
 const storySteps: Array<Omit<StoryStep, "index">> = [
   labeledSteps.welcomeToTheViz,
+  labeledSteps.blingTown,
+  labeledSteps.feelingsFalls,
+  labeledSteps.zoomBackOut,
   labeledSteps.timeOnTheXAndGenreBinOnY,
 ];
 

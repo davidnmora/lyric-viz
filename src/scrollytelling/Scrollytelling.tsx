@@ -38,7 +38,7 @@ const Scrollytelling = ({
     >
       <div style={{ position: "fixed", top: 0 }}>
         <button onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? "Close" : "Open"} scrollytelling
+          <b>{isOpen ? "Close" : "Open"}</b> scrollytelling guided tour
         </button>
       </div>
       <div

@@ -38,7 +38,11 @@ const MultiSelectDropdown = ({
 
   return (
     <>
-      <label htmlFor="multi-select">Choose categories to show</label>
+      <h2>
+        <label htmlFor="multi-select">
+          Filter to a genre (note: can only do 1 filter at a time currently)
+        </label>
+      </h2>
       <Select
         isMulti
         options={options}
@@ -83,14 +87,17 @@ const MultiRangeSliderComp = ({
   };
 
   return (
-    <MultiRangeSlider
-      min={lowerBound}
-      max={upperBound}
-      step={0.01}
-      minValue={minValue}
-      maxValue={maxValue}
-      onInput={handleMultiRangeSliderInput}
-    />
+    <>
+      <h2>Slide either end to filter between 1958-Oct 2022</h2>
+      <MultiRangeSlider
+        min={lowerBound}
+        max={upperBound}
+        step={0.01}
+        minValue={minValue}
+        maxValue={maxValue}
+        onInput={handleMultiRangeSliderInput}
+      />
+    </>
   );
 };
 
@@ -105,7 +112,7 @@ const Controls = ({
   catagoricalEncoding: string;
   updateCatagoricalFilter: Function;
 }) => {
-  const { initialLoadComplete, plotRef } = useContext(DeepScatterContext);
+  const { initialLoadComplete /*, plotRef*/ } = useContext(DeepScatterContext);
   if (!initialLoadComplete) return null;
 
   return (
@@ -117,7 +124,7 @@ const Controls = ({
         padding: 24,
       }}
     >
-      <button
+      {/* <button
         onClick={() => {
           if (plotRef.current) {
             console.log("copied:", plotRef.current?._zoom?.current_corners());
@@ -128,7 +135,7 @@ const Controls = ({
         }}
       >
         Click me get current bbox
-      </button>
+      </button> */}
       <MultiRangeSliderComp {...rangeSliderProps} />
       <MultiSelectDropdown
         field={catagoricalField}

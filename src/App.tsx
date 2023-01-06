@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import "./index.css";
 import Controls from "./Controls";
 import {
   CATAGORICAL_ENCODING,
