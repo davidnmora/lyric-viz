@@ -23096,7 +23096,7 @@ Object.assign(DecimalBigNum.prototype, BigNum.prototype, {
   BigIntArray: BigUint64ArrayCtor,
 });
 function bignumToNumber(bn) {
-  const { buffer, byteOffset, length, signed: signed } = bn;
+  const { buffer, byteOffset, length, signed } = bn;
   const words = new BigUint64ArrayCtor(buffer, byteOffset, length);
   const negative =
     signed && words[words.length - 1] & (BigInt(1) << BigInt(63));
@@ -25342,20 +25342,16 @@ class MakeDataVisitor extends Visitor {
     return this.getVisitFn(props["type"]).call(this, props);
   }
   visitNull(props) {
-    const {
-      ["type"]: type,
-      ["offset"]: offset = 0,
-      ["length"]: length = 0,
-    } = props;
+    const { type, offset = 0, length = 0 } = props;
     return new Data(type, offset, length, 0);
   }
   visitBool(props) {
-    const { ["type"]: type, ["offset"]: offset = 0 } = props;
+    const { type, offset = 0 } = props;
     const nullBitmap = toUint8Array(props["nullBitmap"]);
     const data = toArrayBufferView(type.ArrayType, props["data"]);
     const {
-      ["length"]: length = data.length >> 3,
-      ["nullCount"]: nullCount = props["nullBitmap"] ? -1 : 0,
+      length = data.length >> 3,
+      nullCount = props["nullBitmap"] ? -1 : 0,
     } = props;
     return new Data(type, offset, length, nullCount, [
       void 0,
@@ -25364,13 +25360,11 @@ class MakeDataVisitor extends Visitor {
     ]);
   }
   visitInt(props) {
-    const { ["type"]: type, ["offset"]: offset = 0 } = props;
+    const { type, offset = 0 } = props;
     const nullBitmap = toUint8Array(props["nullBitmap"]);
     const data = toArrayBufferView(type.ArrayType, props["data"]);
-    const {
-      ["length"]: length = data.length,
-      ["nullCount"]: nullCount = props["nullBitmap"] ? -1 : 0,
-    } = props;
+    const { length = data.length, nullCount = props["nullBitmap"] ? -1 : 0 } =
+      props;
     return new Data(type, offset, length, nullCount, [
       void 0,
       data,
@@ -25378,13 +25372,11 @@ class MakeDataVisitor extends Visitor {
     ]);
   }
   visitFloat(props) {
-    const { ["type"]: type, ["offset"]: offset = 0 } = props;
+    const { type, offset = 0 } = props;
     const nullBitmap = toUint8Array(props["nullBitmap"]);
     const data = toArrayBufferView(type.ArrayType, props["data"]);
-    const {
-      ["length"]: length = data.length,
-      ["nullCount"]: nullCount = props["nullBitmap"] ? -1 : 0,
-    } = props;
+    const { length = data.length, nullCount = props["nullBitmap"] ? -1 : 0 } =
+      props;
     return new Data(type, offset, length, nullCount, [
       void 0,
       data,
@@ -25392,13 +25384,13 @@ class MakeDataVisitor extends Visitor {
     ]);
   }
   visitUtf8(props) {
-    const { ["type"]: type, ["offset"]: offset = 0 } = props;
+    const { type, offset = 0 } = props;
     const data = toUint8Array(props["data"]);
     const nullBitmap = toUint8Array(props["nullBitmap"]);
     const valueOffsets = toInt32Array(props["valueOffsets"]);
     const {
-      ["length"]: length = valueOffsets.length - 1,
-      ["nullCount"]: nullCount = props["nullBitmap"] ? -1 : 0,
+      length = valueOffsets.length - 1,
+      nullCount = props["nullBitmap"] ? -1 : 0,
     } = props;
     return new Data(type, offset, length, nullCount, [
       valueOffsets,
@@ -25407,13 +25399,13 @@ class MakeDataVisitor extends Visitor {
     ]);
   }
   visitBinary(props) {
-    const { ["type"]: type, ["offset"]: offset = 0 } = props;
+    const { type, offset = 0 } = props;
     const data = toUint8Array(props["data"]);
     const nullBitmap = toUint8Array(props["nullBitmap"]);
     const valueOffsets = toInt32Array(props["valueOffsets"]);
     const {
-      ["length"]: length = valueOffsets.length - 1,
-      ["nullCount"]: nullCount = props["nullBitmap"] ? -1 : 0,
+      length = valueOffsets.length - 1,
+      nullCount = props["nullBitmap"] ? -1 : 0,
     } = props;
     return new Data(type, offset, length, nullCount, [
       valueOffsets,
@@ -25422,12 +25414,12 @@ class MakeDataVisitor extends Visitor {
     ]);
   }
   visitFixedSizeBinary(props) {
-    const { ["type"]: type, ["offset"]: offset = 0 } = props;
+    const { type, offset = 0 } = props;
     const nullBitmap = toUint8Array(props["nullBitmap"]);
     const data = toArrayBufferView(type.ArrayType, props["data"]);
     const {
-      ["length"]: length = data.length / strideForType(type),
-      ["nullCount"]: nullCount = props["nullBitmap"] ? -1 : 0,
+      length = data.length / strideForType(type),
+      nullCount = props["nullBitmap"] ? -1 : 0,
     } = props;
     return new Data(type, offset, length, nullCount, [
       void 0,
@@ -25436,12 +25428,12 @@ class MakeDataVisitor extends Visitor {
     ]);
   }
   visitDate(props) {
-    const { ["type"]: type, ["offset"]: offset = 0 } = props;
+    const { type, offset = 0 } = props;
     const nullBitmap = toUint8Array(props["nullBitmap"]);
     const data = toArrayBufferView(type.ArrayType, props["data"]);
     const {
-      ["length"]: length = data.length / strideForType(type),
-      ["nullCount"]: nullCount = props["nullBitmap"] ? -1 : 0,
+      length = data.length / strideForType(type),
+      nullCount = props["nullBitmap"] ? -1 : 0,
     } = props;
     return new Data(type, offset, length, nullCount, [
       void 0,
@@ -25450,12 +25442,12 @@ class MakeDataVisitor extends Visitor {
     ]);
   }
   visitTimestamp(props) {
-    const { ["type"]: type, ["offset"]: offset = 0 } = props;
+    const { type, offset = 0 } = props;
     const nullBitmap = toUint8Array(props["nullBitmap"]);
     const data = toArrayBufferView(type.ArrayType, props["data"]);
     const {
-      ["length"]: length = data.length / strideForType(type),
-      ["nullCount"]: nullCount = props["nullBitmap"] ? -1 : 0,
+      length = data.length / strideForType(type),
+      nullCount = props["nullBitmap"] ? -1 : 0,
     } = props;
     return new Data(type, offset, length, nullCount, [
       void 0,
@@ -25464,12 +25456,12 @@ class MakeDataVisitor extends Visitor {
     ]);
   }
   visitTime(props) {
-    const { ["type"]: type, ["offset"]: offset = 0 } = props;
+    const { type, offset = 0 } = props;
     const nullBitmap = toUint8Array(props["nullBitmap"]);
     const data = toArrayBufferView(type.ArrayType, props["data"]);
     const {
-      ["length"]: length = data.length / strideForType(type),
-      ["nullCount"]: nullCount = props["nullBitmap"] ? -1 : 0,
+      length = data.length / strideForType(type),
+      nullCount = props["nullBitmap"] ? -1 : 0,
     } = props;
     return new Data(type, offset, length, nullCount, [
       void 0,
@@ -25478,12 +25470,12 @@ class MakeDataVisitor extends Visitor {
     ]);
   }
   visitDecimal(props) {
-    const { ["type"]: type, ["offset"]: offset = 0 } = props;
+    const { type, offset = 0 } = props;
     const nullBitmap = toUint8Array(props["nullBitmap"]);
     const data = toArrayBufferView(type.ArrayType, props["data"]);
     const {
-      ["length"]: length = data.length / strideForType(type),
-      ["nullCount"]: nullCount = props["nullBitmap"] ? -1 : 0,
+      length = data.length / strideForType(type),
+      nullCount = props["nullBitmap"] ? -1 : 0,
     } = props;
     return new Data(type, offset, length, nullCount, [
       void 0,
@@ -25492,12 +25484,12 @@ class MakeDataVisitor extends Visitor {
     ]);
   }
   visitList(props) {
-    const { ["type"]: type, ["offset"]: offset = 0, ["child"]: child } = props;
+    const { type, offset = 0, child } = props;
     const nullBitmap = toUint8Array(props["nullBitmap"]);
     const valueOffsets = toInt32Array(props["valueOffsets"]);
     const {
-      ["length"]: length = valueOffsets.length - 1,
-      ["nullCount"]: nullCount = props["nullBitmap"] ? -1 : 0,
+      length = valueOffsets.length - 1,
+      nullCount = props["nullBitmap"] ? -1 : 0,
     } = props;
     return new Data(
       type,
@@ -25509,11 +25501,7 @@ class MakeDataVisitor extends Visitor {
     );
   }
   visitStruct(props) {
-    const {
-      ["type"]: type,
-      ["offset"]: offset = 0,
-      ["children"]: children2 = [],
-    } = props;
+    const { type, offset = 0, children: children2 = [] } = props;
     const nullBitmap = toUint8Array(props["nullBitmap"]);
     const {
       length = children2.reduce(
@@ -25532,16 +25520,12 @@ class MakeDataVisitor extends Visitor {
     );
   }
   visitUnion(props) {
-    const {
-      ["type"]: type,
-      ["offset"]: offset = 0,
-      ["children"]: children2 = [],
-    } = props;
+    const { type, offset = 0, children: children2 = [] } = props;
     const nullBitmap = toUint8Array(props["nullBitmap"]);
     const typeIds = toArrayBufferView(type.ArrayType, props["typeIds"]);
     const {
-      ["length"]: length = typeIds.length,
-      ["nullCount"]: nullCount = props["nullBitmap"] ? -1 : 0,
+      length = typeIds.length,
+      nullCount = props["nullBitmap"] ? -1 : 0,
     } = props;
     if (DataType.isSparseUnion(type)) {
       return new Data(
@@ -25564,18 +25548,16 @@ class MakeDataVisitor extends Visitor {
     );
   }
   visitDictionary(props) {
-    const { ["type"]: type, ["offset"]: offset = 0 } = props;
+    const { type, offset = 0 } = props;
     const nullBitmap = toUint8Array(props["nullBitmap"]);
     const data = toArrayBufferView(type.indices.ArrayType, props["data"]);
     const {
-      ["dictionary"]: dictionary = new Vector([
+      dictionary = new Vector([
         new MakeDataVisitor().visit({ type: type.dictionary }),
       ]),
     } = props;
-    const {
-      ["length"]: length = data.length,
-      ["nullCount"]: nullCount = props["nullBitmap"] ? -1 : 0,
-    } = props;
+    const { length = data.length, nullCount = props["nullBitmap"] ? -1 : 0 } =
+      props;
     return new Data(
       type,
       offset,
@@ -25587,12 +25569,12 @@ class MakeDataVisitor extends Visitor {
     );
   }
   visitInterval(props) {
-    const { ["type"]: type, ["offset"]: offset = 0 } = props;
+    const { type, offset = 0 } = props;
     const nullBitmap = toUint8Array(props["nullBitmap"]);
     const data = toArrayBufferView(type.ArrayType, props["data"]);
     const {
-      ["length"]: length = data.length / strideForType(type),
-      ["nullCount"]: nullCount = props["nullBitmap"] ? -1 : 0,
+      length = data.length / strideForType(type),
+      nullCount = props["nullBitmap"] ? -1 : 0,
     } = props;
     return new Data(type, offset, length, nullCount, [
       void 0,
@@ -25602,14 +25584,14 @@ class MakeDataVisitor extends Visitor {
   }
   visitFixedSizeList(props) {
     const {
-      ["type"]: type,
-      ["offset"]: offset = 0,
-      ["child"]: child = new MakeDataVisitor().visit({ type: type.valueType }),
+      type,
+      offset = 0,
+      child = new MakeDataVisitor().visit({ type: type.valueType }),
     } = props;
     const nullBitmap = toUint8Array(props["nullBitmap"]);
     const {
-      ["length"]: length = child.length / strideForType(type),
-      ["nullCount"]: nullCount = props["nullBitmap"] ? -1 : 0,
+      length = child.length / strideForType(type),
+      nullCount = props["nullBitmap"] ? -1 : 0,
     } = props;
     return new Data(
       type,
@@ -25622,15 +25604,15 @@ class MakeDataVisitor extends Visitor {
   }
   visitMap(props) {
     const {
-      ["type"]: type,
-      ["offset"]: offset = 0,
-      ["child"]: child = new MakeDataVisitor().visit({ type: type.childType }),
+      type,
+      offset = 0,
+      child = new MakeDataVisitor().visit({ type: type.childType }),
     } = props;
     const nullBitmap = toUint8Array(props["nullBitmap"]);
     const valueOffsets = toInt32Array(props["valueOffsets"]);
     const {
-      ["length"]: length = valueOffsets.length - 1,
-      ["nullCount"]: nullCount = props["nullBitmap"] ? -1 : 0,
+      length = valueOffsets.length - 1,
+      nullCount = props["nullBitmap"] ? -1 : 0,
     } = props;
     return new Data(
       type,
@@ -26275,17 +26257,17 @@ Vector[_a$2] = ((proto) => {
     const byteLength = instance$3.getVisitFnByTypeId(typeId);
     visitorsByTypeId[typeId] = { get: get2, set: set2, indexOf, byteLength };
     vectorPrototypesByTypeId[typeId] = Object.create(proto, {
-      ["isValid"]: { value: wrapChunkedCall1(isChunkedValid) },
-      ["get"]: {
+      isValid: { value: wrapChunkedCall1(isChunkedValid) },
+      get: {
         value: wrapChunkedCall1(instance$6.getVisitFnByTypeId(typeId)),
       },
-      ["set"]: {
+      set: {
         value: wrapChunkedCall2(instance$7.getVisitFnByTypeId(typeId)),
       },
-      ["indexOf"]: {
+      indexOf: {
         value: wrapChunkedIndexOf(instance$5.getVisitFnByTypeId(typeId)),
       },
-      ["getByteLength"]: {
+      getByteLength: {
         value: wrapChunkedCall1(instance$3.getVisitFnByTypeId(typeId)),
       },
     });
@@ -26598,7 +26580,7 @@ class OffsetsBufferBuilder extends DataBufferBuilder {
   }
 }
 class Builder$3 {
-  constructor({ type: type, nullValues: nulls }) {
+  constructor({ type, nullValues: nulls }) {
     this.length = 0;
     this.finished = false;
     this.type = type;
@@ -30240,11 +30222,7 @@ DateMillisecondBuilder.prototype._setValue = setDateMillisecond;
 class DecimalBuilder extends FixedWidthBuilder {}
 DecimalBuilder.prototype._setValue = setDecimal;
 class DictionaryBuilder extends Builder$3 {
-  constructor({
-    type: type,
-    nullValues: nulls,
-    dictionaryHashFunction: hashFn,
-  }) {
+  constructor({ type, nullValues: nulls, dictionaryHashFunction: hashFn }) {
     super({
       type: new Dictionary(
         type.dictionary,
@@ -31025,9 +31003,9 @@ function inferType(value) {
   );
 }
 function builderThroughIterable(options) {
-  const { ["queueingStrategy"]: queueingStrategy = "count" } = options;
+  const { queueingStrategy = "count" } = options;
   const {
-    ["highWaterMark"]: highWaterMark = queueingStrategy !== "bytes"
+    highWaterMark = queueingStrategy !== "bytes"
       ? Number.POSITIVE_INFINITY
       : Math.pow(2, 14),
   } = options;
