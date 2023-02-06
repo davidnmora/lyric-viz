@@ -26258,12 +26258,8 @@ Vector[_a$2] = ((proto) => {
     visitorsByTypeId[typeId] = { get: get2, set: set2, indexOf, byteLength };
     vectorPrototypesByTypeId[typeId] = Object.create(proto, {
       isValid: { value: wrapChunkedCall1(isChunkedValid) },
-      get: {
-        value: wrapChunkedCall1(instance$6.getVisitFnByTypeId(typeId)),
-      },
-      set: {
-        value: wrapChunkedCall2(instance$7.getVisitFnByTypeId(typeId)),
-      },
+      get: { value: wrapChunkedCall1(instance$6.getVisitFnByTypeId(typeId)) },
+      set: { value: wrapChunkedCall2(instance$7.getVisitFnByTypeId(typeId)) },
       indexOf: {
         value: wrapChunkedIndexOf(instance$5.getVisitFnByTypeId(typeId)),
       },
