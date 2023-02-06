@@ -18,6 +18,7 @@ import DeepScatterWrapper, {
 } from "./DeepScatterWrapper";
 import Scrollytelling from "./scrollytelling/Scrollytelling";
 import type { StoryStep } from "./scrollytelling/scrollytelling-utils";
+import labels from "./the-only-files-that-need-dataset-specific-editing/lyric-viz-region-labels";
 
 function App() {
   const plotRef = useRef<ScatterPlot>();
@@ -82,6 +83,7 @@ function App() {
           prefs={deepscatterInitialPrefs}
           tooltipHTML={tooltipHTML}
           onClickDataPoint={onClickDataPoint}
+          labels={labels}
         >
           <Controls
             rangeSliderProps={rangeSliderProps}

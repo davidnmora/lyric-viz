@@ -88,7 +88,7 @@ const MultiRangeSliderComp = ({
 
   return (
     <>
-      <h2>Slide either end to filter between 1958-Oct 2022</h2>
+      <h2>Slide either end to filter between 1958-2022</h2>
       <MultiRangeSlider
         min={lowerBound}
         max={upperBound}

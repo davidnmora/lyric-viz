@@ -68,5 +68,8 @@ export const onClickDataPoint = (point: DataPoint) => {
       " ",
       "+"
     );
+  // @ts-ignore
+  const coords = `coords: [${point.x}, ${point.y}], nearestLyric: "${point.lyric_line}",`;
+  console.log(coords);
   window.open(youtubeSearchURL, "_blank");
 };

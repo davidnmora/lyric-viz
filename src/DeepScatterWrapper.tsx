@@ -2,6 +2,12 @@ import { createContext, useEffect, useMemo, useRef, useState } from "react";
 // @ts-ignore
 import ScatterPlot from "./deepscatter-dist-for-ease-of-access-and-edit.js";
 
+export type Labels = {
+  features: Object;
+  name: string;
+  labelKey: string;
+};
+
 type TooltipHTMLGenerator = (point: any) => string;
 type DataPointClickHandler = (point: any) => void;
 
@@ -78,12 +84,14 @@ const DeepScatterWrapper = ({
   prefs,
   tooltipHTML,
   onClickDataPoint,
+  labels,
   children,
 }: {
   plotRef: any;
   prefs: Object;
   tooltipHTML?: TooltipHTMLGenerator;
   onClickDataPoint?: DataPointClickHandler;
+  labels: Labels;
   children: any;
 }) => {
   const [initialLoadComplete, setInitiaLoadComplete] = useState<boolean>(false);
@@ -103,6 +111,8 @@ const DeepScatterWrapper = ({
         console.log("... initial prefs set");
         setInitiaLoadComplete(true);
         if (onClickDataPoint) _plot.click_function = onClickDataPoint;
+
+        _plot.add_labels(labels.features, labels.name, labels.labelKey);
       });
     }
   }, [
@@ -112,6 +122,9 @@ const DeepScatterWrapper = ({
     prefs,
     tooltipHTML,
     onClickDataPoint,
+    labels.features,
+    labels.name,
+    labels.labelKey,
   ]);
 
   const providerState = useMemo(
