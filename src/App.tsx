@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import "./index.css";
-import Controls from "./Controls";
+import Controls from "./components/controls/Controls";
 import {
   CATAGORICAL_ENCODING,
   CATAGORICAL_FIELD,
@@ -11,11 +11,11 @@ import {
   onClickDataPoint,
   tooltipHTML,
 } from "./the-only-files-that-need-dataset-specific-editing/data-specefic-metadata";
-import ScatterPlot from "./deepscatter-dist-for-ease-of-access-and-edit.js";
+import ScatterPlot from "./components/deepscatter/deepscatter-dist-for-ease-of-access-and-edit.js";
 import DeepScatterWrapper, {
   generateCatagoricalFilter,
   generateRangeFilterObject,
-} from "./DeepScatterWrapper";
+} from "./components/deepscatter/DeepScatterWrapper";
 import Scrollytelling from "./scrollytelling/Scrollytelling";
 import type { StoryStep } from "./scrollytelling/scrollytelling-utils";
 import labels from "./the-only-files-that-need-dataset-specific-editing/lyric-viz-region-labels";

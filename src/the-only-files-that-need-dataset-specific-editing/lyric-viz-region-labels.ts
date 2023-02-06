@@ -1,4 +1,4 @@
-import { Labels } from "../DeepScatterWrapper";
+import { Labels } from "../components/deepscatter/DeepScatterWrapper";
 
 const LYRIC_VIZ_REGION_LABELS: Object = {
   type: "FeatureCollection",

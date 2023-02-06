@@ -5,7 +5,7 @@ import {
   DeepScatterContext,
   retrieveDomainForAnEncodedAestheticProperty,
   retrieveRangeForAnEncodedAestheticProperty,
-} from "./DeepScatterWrapper";
+} from "../deepscatter/DeepScatterWrapper";
 
 const MultiSelectDropdown = ({
   catagoricalEncoding,
