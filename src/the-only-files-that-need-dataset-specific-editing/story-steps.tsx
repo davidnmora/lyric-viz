@@ -17,8 +17,8 @@ const mapLocations = {
     y: [0.7049463248931738, 0.7728779733647674],
   },
   blingTown: {
-    x: [0.352932844653939, 0.4166393297242866],
-    y: [0.4070743109364665, 0.4431707417037659],
+    x: [0.3588005036078645, 0.41581382528495037],
+    y: [0.49764345111427793, 0.5413608358870472],
   },
   feelingsFalls: {
     x: [0.4575146597836081, 0.7486141162637061],
@@ -37,6 +37,7 @@ const prefsUpdates = {
       jitter_radius: {},
     },
   },
+  // JUST FOR REFERENCE PURPOSES:
   justOneJiraIssue: {
     encoding: {
       filter: {
@@ -72,17 +73,16 @@ const labeledSteps: { [key: string]: Omit<StoryStep, "index"> } = {
     prefsUpdate: prefsUpdates.xyEncodingNoFilters,
   },
   blingTown: {
-    content:
-      "This is Bling Town: (left to right) chains, watches, diamonds, gold, ice...",
+    content: "This is Bling Town: chains, watches, diamonds, gold, ice...",
     zoomTo: mapLocations.blingTown,
     prefsUpdate: prefsUpdates.xyEncodingNoFilters,
   },
-  feelingsFalls: {
-    content:
-      "Less superficially, this is Feelings Falls: a cluster of emotion-related themes, cascading down till the lower center cluster typified by lyrics like 'How I feel'.",
-    zoomTo: mapLocations.feelingsFalls,
-    prefsUpdate: prefsUpdates.xyEncodingNoFilters,
-  },
+  // feelingsFalls: {
+  //   content:
+  //     "Less superficially, this is Feelings Falls: a cluster of emotion-related themes, cascading down till the lower center cluster typified by lyrics like 'How I feel'.",
+  //   zoomTo: mapLocations.feelingsFalls,
+  //   prefsUpdate: prefsUpdates.xyEncodingNoFilters,
+  // },
   zoomBackOut: {
     content:
       "... and we can animate these points into new arrangements as well... scroll on!",
@@ -100,7 +100,7 @@ const labeledSteps: { [key: string]: Omit<StoryStep, "index"> } = {
 const storySteps: Array<Omit<StoryStep, "index">> = [
   labeledSteps.welcomeToTheViz,
   labeledSteps.blingTown,
-  labeledSteps.feelingsFalls,
+  // labeledSteps.feelingsFalls,
   labeledSteps.zoomBackOut,
   labeledSteps.timeOnTheXAndGenreBinOnY,
 ];

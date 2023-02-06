@@ -9,7 +9,7 @@ export const Y_TEXT_EMBEDDING = "y";
 export const CONTINUOUS_LOWER_BOUND = 0;
 export const CONTINUOUS_UPPER_BOUND = 1;
 
-export const TILES_FOLDER_NAME_IN_PUBLIC = "deepscatter-tiles-10k-per-tile";
+export const TILES_FOLDER_NAME_IN_PUBLIC = "deepscatter-tiles";
 
 const ROOT_REPO_NAME = "lyric-viz"; // N0TE: served, not from "/", but from "/lyric-viz/" on gh-pages
 

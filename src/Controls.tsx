@@ -112,7 +112,7 @@ const Controls = ({
   catagoricalEncoding: string;
   updateCatagoricalFilter: Function;
 }) => {
-  const { initialLoadComplete /*, plotRef*/ } = useContext(DeepScatterContext);
+  const { initialLoadComplete, plotRef } = useContext(DeepScatterContext);
   if (!initialLoadComplete) return null;
 
   return (
@@ -124,7 +124,7 @@ const Controls = ({
         padding: 24,
       }}
     >
-      {/* <button
+      <button
         onClick={() => {
           if (plotRef.current) {
             console.log("copied:", plotRef.current?._zoom?.current_corners());
@@ -135,7 +135,7 @@ const Controls = ({
         }}
       >
         Click me get current bbox
-      </button> */}
+      </button>
       <MultiRangeSliderComp {...rangeSliderProps} />
       <MultiSelectDropdown
         field={catagoricalField}
