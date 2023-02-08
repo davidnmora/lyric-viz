@@ -226,6 +226,37 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
   },
 
   {
+    label: "😭 Crying",
+    nearestLyric: "Crying over you",
+    coordinates: [0.49363499879837036, 0.6527100205421448],
+  },
+
+  {
+    label: "💓 Heart",
+    nearestLyric: "My heart is in your hands",
+    coordinates: [0.5351279973983765, 0.6530879735946655],
+    // children: [
+    // {
+    //   label: "Broken heart",
+    //   nearestLyric: "Heartbreak time (my heart is breaking)",
+    //   coordinates: [0.5345320105552673, 0.6471570134162903],
+    // },
+    // {
+    //   label: "Soul",
+    //   nearestLyric: "Somewhere I can rest my soul (rest my soul)",
+    //   coordinates: [0.5206210017204285, 0.6361569762229919],
+    //   children: [
+    //     {
+    //       label: "Soul possession",
+    //       nearestLyric: "As if someone else controls your very soul",
+    //       coordinates: [0.5217909812927246, 0.6368600130081177],
+    //     },
+    //   ],
+    // },
+    // ],
+  },
+
+  {
     label: "La La Land",
     nearestLyric: "La da la da di da da, la da da da da",
     coordinates: [0.5482959747314453, 0.22986899316310883],
