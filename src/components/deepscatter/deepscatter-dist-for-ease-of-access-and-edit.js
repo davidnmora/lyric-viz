@@ -35387,7 +35387,8 @@ class DepthTree extends dist.RBush3D {
         const lower_rect = this.to3d(hid_data, hidden_until, hid_end);
         this.insert(lower_rect);
       }
-      const current_rect = this.to3d(p3d.data, hidden_until, this.maxdepth);
+      // const current_rect = this.to3d(p3d.data, hidden_until, this.maxdepth);
+      const current_rect = this.to3d(p3d.data, 0, this.maxdepth);
       console.log("INSERTING", current_rect);
       this.insert(current_rect);
     }

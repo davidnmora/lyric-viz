@@ -43,6 +43,8 @@ export const deepscatterInitialPrefs = {
 };
 
 type DataPoint = {
+  x: Number;
+  y: Number;
   lyric_line: string;
   song: string;
   performer: string;
@@ -63,13 +65,31 @@ export const tooltipHTML = (point: DataPoint): string => {
 };
 
 export const onClickDataPoint = (point: DataPoint) => {
-  const youtubeSearchURL =
-    `https://www.youtube.com/results?search_query=${point.song}+by+${point.performer}`.replace(
-      " ",
-      "+"
-    );
+  // https://stackoverflow.com/questions/63033012/copy-the-text-to-the-clipboard-without-using-any-input
+  function addToClipboard(TextToCopy: string) {
+    var TempText = document.createElement("textarea");
+    TempText.value = TextToCopy;
+    document.body.appendChild(TempText);
+    TempText.select();
+
+    document.execCommand("copy");
+    document.body.removeChild(TempText);
+  }
+
+  // const youtubeSearchURL =
+  //   `https://www.youtube.com/results?search_query=${point.song}+by+${point.performer}`.replace(
+  //     " ",
+  //     "+"
+  //   );
   // @ts-ignore
-  const coords = `coords: [${point.x}, ${point.y}], nearestLyric: "${point.lyric_line}",`;
-  console.log(coords);
-  window.open(youtubeSearchURL, "_blank");
+  const labelStub = `
+  {
+    label: "",
+    nearestLyric: "${point.lyric_line}",
+    coordinates: [${point.x}, ${point.y}],
+  },
+  `;
+  console.log(labelStub);
+  addToClipboard(labelStub);
+  // window.open(youtubeSearchURL, "_blank");
 };

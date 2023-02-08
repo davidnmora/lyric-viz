@@ -6,6 +6,7 @@ export type Labels = {
   features: Object;
   name: string;
   labelKey: string;
+  sizeKey: string;
 };
 
 type TooltipHTMLGenerator = (point: any) => string;
@@ -112,7 +113,12 @@ const DeepScatterWrapper = ({
         setInitiaLoadComplete(true);
         if (onClickDataPoint) _plot.click_function = onClickDataPoint;
 
-        _plot.add_labels(labels.features, labels.name, labels.labelKey);
+        _plot.add_labels(
+          labels.features,
+          labels.name,
+          labels.labelKey,
+          labels.sizeKey
+        );
       });
     }
   }, [
@@ -125,6 +131,7 @@ const DeepScatterWrapper = ({
     labels.features,
     labels.name,
     labels.labelKey,
+    labels.sizeKey,
   ]);
 
   const providerState = useMemo(
