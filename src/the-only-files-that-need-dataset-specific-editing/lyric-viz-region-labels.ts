@@ -10,6 +10,11 @@ type RawLabel = {
 
 const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
   {
+    label: "La La Land",
+    nearestLyric: "La da la da di da da, la da da da da",
+    coordinates: [0.5482959747314453, 0.22986899316310883],
+  },
+  {
     label: "'You and I/me'",
     nearestLyric: "Just you and I",
     coordinates: [0.7142050266265869, 0.5423489809036255],
@@ -86,13 +91,13 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
   {
     label: "It doesn't matter",
     nearestLyric: "(It doesn't matter, baby)",
-    coordinates: [0.7027180194854736, 0.5577309727668762],
+    coordinates: [0.1, 0.1],
   },
 
   {
     label: "Enough",
     nearestLyric: "There's just not enough",
-    coordinates: [0.6869040131568909, 0.5568770170211792],
+    coordinates: [0.1, 0.1],
   },
 
   {
@@ -235,31 +240,50 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
     label: "💓 Heart",
     nearestLyric: "My heart is in your hands",
     coordinates: [0.5351279973983765, 0.6530879735946655],
-    // children: [
-    // {
-    //   label: "Broken heart",
-    //   nearestLyric: "Heartbreak time (my heart is breaking)",
-    //   coordinates: [0.5345320105552673, 0.6471570134162903],
-    // },
-    // {
-    //   label: "Soul",
-    //   nearestLyric: "Somewhere I can rest my soul (rest my soul)",
-    //   coordinates: [0.5206210017204285, 0.6361569762229919],
-    //   children: [
-    //     {
-    //       label: "Soul possession",
-    //       nearestLyric: "As if someone else controls your very soul",
-    //       coordinates: [0.5217909812927246, 0.6368600130081177],
-    //     },
-    //   ],
-    // },
-    // ],
+    children: [
+      {
+        label: "Broken heart",
+        nearestLyric: "Heartbreak time (my heart is breaking)",
+        coordinates: [0.5345320105552673, 0.6471570134162903],
+      },
+      {
+        label: "Soul",
+        nearestLyric: "Somewhere I can rest my soul (rest my soul)",
+        coordinates: [0.5206210017204285, 0.6361569762229919],
+        children: [
+          {
+            label: "Soul possession",
+            nearestLyric: "As if someone else controls your very soul",
+            coordinates: [0.5217909812927246, 0.6368600130081177],
+          },
+        ],
+      },
+    ],
   },
 
   {
-    label: "La La Land",
-    nearestLyric: "La da la da di da da, la da da da da",
-    coordinates: [0.5482959747314453, 0.22986899316310883],
+    label: "'without you'",
+    nearestLyric: "Couldn't see me without you, babe",
+    coordinates: [0.6977459788322449, 0.6105719804763794],
+    children: [
+      {
+        label: "'can't live without you'",
+        nearestLyric: "I couldn't live without you",
+        coordinates: [0.6951349973678589, 0.6095970273017883],
+      },
+
+      {
+        label: "'without your love'",
+        nearestLyric: "Without your love, baby, I would die",
+        coordinates: [0.6921169757843018, 0.6163489818572998],
+      },
+
+      {
+        label: "'living/dieing without you",
+        nearestLyric: "Than to go on living without you",
+        coordinates: [0.6990150213241577, 0.6126959919929504],
+      },
+    ],
   },
 ];
 
@@ -278,6 +302,7 @@ const getFlatListFromList = (
     []
   );
 
+const MAX_FONT_SIZE = 16;
 const LYRIC_VIZ_REGION_LABELS: Object = {
   type: "FeatureCollection",
   name: "lyric_viz_region_labels",
@@ -288,7 +313,7 @@ const LYRIC_VIZ_REGION_LABELS: Object = {
         label,
         level,
         nearestLyric,
-        size: level ? 1 / level : 1, // lower levels are smaller
+        size: level ? MAX_FONT_SIZE / level : MAX_FONT_SIZE, // lower levels are smaller
       },
       geometry: {
         type: "Point",

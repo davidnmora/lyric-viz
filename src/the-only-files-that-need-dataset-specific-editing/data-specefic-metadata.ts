@@ -20,7 +20,7 @@ export const deepscatterInitialPrefs = {
   max_points: 500000, // a full cap.
   alpha: 500, // Target saturation for the full page.
   zoom_balance: 0.7, // Rate at which points increase size. https://observablehq.com/@bmschmidt/zoom-strategies-for-huge-scatterplots-with-three-js
-  point_size: 4, // Default point size before application of size scaling
+  point_size: 1, // Default point size before application of size scaling
   background_color: "#ffffff",
   duration: 1000, // zoom duration
 
