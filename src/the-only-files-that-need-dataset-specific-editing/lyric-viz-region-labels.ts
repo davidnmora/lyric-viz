@@ -4,7 +4,7 @@ type RawLabel = {
   label: string;
   level?: number;
   nearestLyric: string;
-  coordinates: Array<Number>;
+  coordinates: Array<number>;
   children?: Array<RawLabel>;
 };
 
@@ -317,7 +317,8 @@ const LYRIC_VIZ_REGION_LABELS: Object = {
       },
       geometry: {
         type: "Point",
-        coordinates,
+        // TODO: actually fix the hard-coded numbers, don't just do this, since it'll break going forward
+        coordinates: coordinates.map((c) => c * 100),
       },
     })
   ),

@@ -11,19 +11,7 @@ import {
 } from "./data-specefic-metadata";
 
 const mapLocations = {
-  overview: { x: [0, 1], y: [0, 1] },
-  firstIssueFocus: {
-    x: [0.5074450273282145, 0.594718790487779],
-    y: [0.7049463248931738, 0.7728779733647674],
-  },
-  blingTown: {
-    x: [0.3588005036078645, 0.41581382528495037],
-    y: [0.49764345111427793, 0.5413608358870472],
-  },
-  feelingsFalls: {
-    x: [0.4575146597836081, 0.7486141162637061],
-    y: [0.2681981523384174, 0.4331366411850291],
-  },
+  overview: { x: [0, 100], y: [0, 100] },
 };
 
 const prefsUpdates = {
@@ -32,9 +20,9 @@ const prefsUpdates = {
     encoding: {
       x: { field: X_TEXT_EMBEDDING },
       y: { field: Y_TEXT_EMBEDDING },
-      filter: {},
-      filter2: {},
-      jitter_radius: {},
+      filter: null,
+      filter2: null,
+      jitter_radius: null,
     },
   },
   // JUST FOR REFERENCE PURPOSES:
@@ -69,24 +57,7 @@ const labeledSteps: { [key: string]: Omit<StoryStep, "index"> } = {
   welcomeToTheViz: {
     content:
       "Welcome to the map: each dot is 1 of 166,000 lyric lines, arranged by topic via sentence embedding. Click a dot to open that song in YouTube.",
-    zoomTo: mapLocations.overview,
-    prefsUpdate: prefsUpdates.xyEncodingNoFilters,
-  },
-  blingTown: {
-    content: "This is Bling Town: chains, watches, diamonds, gold, ice...",
-    zoomTo: mapLocations.blingTown,
-    prefsUpdate: prefsUpdates.xyEncodingNoFilters,
-  },
-  // feelingsFalls: {
-  //   content:
-  //     "Less superficially, this is Feelings Falls: a cluster of emotion-related themes, cascading down till the lower center cluster typified by lyrics like 'How I feel'.",
-  //   zoomTo: mapLocations.feelingsFalls,
-  //   prefsUpdate: prefsUpdates.xyEncodingNoFilters,
-  // },
-  zoomBackOut: {
-    content:
-      "... and we can animate these points into new arrangements as well... scroll on!",
-    zoomTo: mapLocations.overview,
+    // zoomTo: mapLocations.overview,
     prefsUpdate: prefsUpdates.xyEncodingNoFilters,
   },
   timeOnTheXAndGenreBinOnY: {
