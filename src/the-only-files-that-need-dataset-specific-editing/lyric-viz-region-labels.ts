@@ -19,35 +19,479 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
     nearestLyric: "Everything That I've been dreaming of",
     coordinates: [55.99439740180969, 27.92370021343231],
   },
-
   {
-    label: "Chance & Risk",
-    nearestLyric: "I'll take my share of chances",
-    coordinates: [65.48275756835938, 37.49410629272461],
+    label: "Music",
+    nearestLyric: "'Cause there's music in the air",
+    coordinates: [42.318546295166016, 36.5294075012207],
     children: [
       {
-        label: "'risk'",
-        nearestLyric: "The risk that I'm takin'",
-        coordinates: [65.2879638671875, 37.3307991027832],
+        label: "Groove",
+        nearestLyric: "You gotta get on the groove",
+        coordinates: [36.529319763183594, 37.39140701293945],
       },
 
       {
-        label: "'take a chance'",
-        nearestLyric: "(Take a chance, take a chance, take a chance on me)",
-        coordinates: [65.6971435546875, 37.244544982910156],
+        label: "'bass'",
+        nearestLyric: "You gotta get on the groove",
+        coordinates: [36.529319763183594, 37.39140701293945],
+      },
+      {
+        label: "🪘 Drums & rhthm",
+        nearestLyric: "Drums keep pounding a rhythm to the brain",
+        coordinates: [39.69491958618164, 38.74080276489258],
       },
 
       {
-        label: "'one more chance'",
-        nearestLyric: "Won't you just give me one chance?",
-        coordinates: [65.77791595458984, 37.15735626220703],
+        label: "DJ",
+        nearestLyric: "Hey Mr. DJ, put a record on",
+        coordinates: [37.76091384887695, 36.0947265625],
+        children: [
+          {
+            label: "'DJ, keep playing'",
+            nearestLyric: "Hey D.J. keep playing that song",
+            coordinates: [37.96235656738281, 36.226078033447266],
+          },
+        ],
+      },
+
+      {
+        label: "🪩 Dance",
+        nearestLyric: "So just dance, dance, dance",
+        coordinates: [39.80129623413086, 34.674861907958984],
+        children: [
+          {
+            label: "'[one] last dance'",
+            nearestLyric: "Last chance for one last dance",
+            coordinates: [40.152748107910156, 34.02052307128906],
+          },
+        ],
+      },
+
+      {
+        label: "🎤 Singing",
+        nearestLyric: "I'm singing, I'm singing",
+        coordinates: [43.04058074951172, 34.66792678833008],
       },
       {
-        label: "'second chance'",
-        nearestLyric: "There ain't no second chance",
-        coordinates: [65.94288635253906, 36.92943572998047],
+        label: "'radio'",
+        nearestLyric: "Music on the radio",
+        coordinates: [43.111629486083984, 37.0932502746582],
       },
     ],
+  },
+
+  {
+    label: "Party!",
+    nearestLyric: "It's party time (Party time)",
+    coordinates: [45.2708854675293, 36.67374038696289],
+  },
+
+  {
+    label: "'romance'",
+    nearestLyric: "Reminding him of romance",
+    coordinates: [46.34892654418945, 31.696130752563477],
+  },
+
+  {
+    label: "🔔 Bell",
+    nearestLyric: "Ring out the bells again",
+    coordinates: [48.14754867553711, 31.715627670288086],
+  },
+
+  {
+    label: "Heavenly Bodies",
+    nearestLyric: "Let the sunshine (Let it shine)",
+    coordinates: [48.36711883544922, 34.33625411987305],
+    children: [
+      {
+        label: "⭐️ Stars",
+        nearestLyric: "A thousand stars in the sky make me realize",
+        coordinates: [47.30270004272461, 35.15462112426758],
+      },
+
+      {
+        label: "🌙 Moon",
+        nearestLyric: "Moon out tonight",
+        coordinates: [47.507957458496094, 33.73540496826172],
+      },
+
+      {
+        label: "Sunshine",
+        nearestLyric: "Oh, my only sunshine (My only sunshine)",
+        coordinates: [48.152587890625, 33.816402435302734],
+      },
+
+      {
+        label: "Sunset",
+        nearestLyric: "It's quite a sunset",
+        coordinates: [48.862945556640625, 34.51715850830078],
+      },
+    ],
+  },
+
+  {
+    label: "Dark & Light",
+    nearestLyric: "And the darkness inside you",
+    coordinates: [50.07377243041992, 35.090824127197266],
+    children: [
+      {
+        label: "Shadows",
+        nearestLyric: "Glimpse through the shadow, tear at the shadow",
+        coordinates: [49.412208557128906, 33.30867004394531],
+      },
+
+      {
+        label: "Night",
+        nearestLyric: "This is the night",
+        coordinates: [51.59398651123047, 33.99238204956055],
+      },
+
+      {
+        label: "'the light'",
+        nearestLyric: "When they both turn out the lights",
+        coordinates: [49.96065902709961, 35.80232238769531],
+        children: [
+          {
+            label: "'you're my light'",
+            nearestLyric: "You're my guiding light",
+            coordinates: [50.0830192565918, 36.13233947753906],
+          },
+
+          {
+            label: "Street & city lights",
+            nearestLyric: "Streetlights, people",
+            coordinates: [49.556697845458984, 36.71057891845703],
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    label: "'twist'",
+    nearestLyric: "They'll twist and I'll twist",
+    coordinates: [44.62394332885742, 28.47542381286621],
+  },
+
+  {
+    label: "👻 Supernatural beings",
+    nearestLyric: "But if he's a ghost, then I can be a phantom",
+    coordinates: [47.45479965209961, 29.303726196289062],
+    children: [
+      {
+        label: "'demons'",
+        nearestLyric: "You gotta know your demons",
+        coordinates: [46.85967254638672, 29.641435623168945],
+      },
+
+      {
+        label: "'angel'",
+        nearestLyric: "You're an angel, baby",
+        coordinates: [42.44424819946289, 28.456645965576172],
+        children: [
+          {
+            label: "'you're my angel'",
+            nearestLyric:
+              "Shorty, you're my angel, you're my darling angel (Ah)",
+            coordinates: [42.37223815917969, 28.210494995117188],
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    label: "🙉 Monkey",
+    nearestLyric: "Well, they gotta pet monkey",
+    coordinates: [42.96371078491211, 31.08963394165039],
+  },
+
+  {
+    label: "Wildness",
+    nearestLyric: "Then you love a little wild one",
+    coordinates: [49.255706787109375, 29.91173553466797],
+    children: [
+      {
+        label: "'can't be tamed'",
+        nearestLyric: "I can't be tamed, I can't be tamed (I can't be tamed)",
+        coordinates: [49.1621208190918, 29.483266830444336],
+      },
+    ],
+  },
+
+  {
+    label: "Glory",
+    nearestLyric: "A little of the glory, yeah",
+    coordinates: [52.50564193725586, 30.439315795898438],
+  },
+
+  {
+    label: "📅Dates",
+    nearestLyric:
+      "And on Thursday and Friday and Saturday, we chilled on Sunday",
+    coordinates: [53.264652252197266, 32.03626251220703],
+  },
+
+  {
+    label: "'witness'",
+    nearestLyric: "Can I get a witness? Yeah, yes",
+    coordinates: [52.97869110107422, 27.036386489868164],
+  },
+
+  {
+    label: "Breathe (or lack of)",
+    nearestLyric: "Breathing hard when I'm squeezin' your lungs",
+    coordinates: [50.798648834228516, 30.244338989257812],
+  },
+
+  {
+    label: "Losing control",
+    nearestLyric: "Got to make you lose control",
+    coordinates: [52.29414367675781, 28.684234619140625],
+  },
+
+  {
+    label: "Crazy",
+    nearestLyric: "Sure he's crazy",
+    coordinates: [55.688453674316406, 32.10649490356445],
+    children: [
+      {
+        label: "'delirious'",
+        nearestLyric: "To all your friends, you're delirious",
+        coordinates: [56.09120559692383, 31.38946533203125],
+      },
+
+      {
+        label: "crazy for/about you",
+        nearestLyric: "'Cause I'm crazy about you",
+        coordinates: [55.705047607421875, 31.791662216186523],
+      },
+
+      {
+        label: "'drive me crazy'",
+        nearestLyric: "Girl, you drive me crazy",
+        coordinates: [55.47303009033203, 32.477928161621094],
+      },
+    ],
+  },
+
+  {
+    label: "'are you ready?'",
+    nearestLyric: "Oh, are you ready for it?",
+    coordinates: [59.471534729003906, 30.934249877929688],
+  },
+  {
+    label: "👩‍⚕️'doctor'",
+    nearestLyric: "Doctor, doctor, where ya at? Give me something",
+    coordinates: [58.280757904052734, 31.50971031188965],
+  },
+
+  {
+    label: "'make a move'",
+    nearestLyric: "Make a move, but be calm",
+    coordinates: [57.894386291503906, 32.50066375732422],
+  },
+
+  {
+    label: "📱 Calling",
+    nearestLyric: "Though you don't call anymore",
+    coordinates: [59.972808837890625, 34.012420654296875],
+    children: [
+      {
+        label: "Phone numbers",
+        nearestLyric:
+          "If you jot down ya number, you'll get mine in exchange, hey",
+        coordinates: [60.548133850097656, 33.00746536254883],
+      },
+      {
+        label: "'call me'",
+        nearestLyric: "Call me on the telephone",
+        coordinates: [60.01302719116211, 33.78444290161133],
+      },
+      {
+        label: "'phone'",
+        nearestLyric: "That expression when the phone rings",
+        coordinates: [59.05304718017578, 34.08769226074219],
+      },
+      {
+        label: "'hang/pick up",
+        nearestLyric: "Don't hang up",
+        coordinates: [59.80107879638672, 33.468448638916016],
+      },
+    ],
+  },
+
+  {
+    label: "Hope",
+    nearestLyric: "You fill me with hope",
+    coordinates: [64.26398468017578, 34.30587387084961],
+    children: [
+      {
+        label: "'hope is gone'",
+        nearestLyric: "When all hope is gone (ooh)",
+        coordinates: [64.09319305419922, 34.58198928833008],
+      },
+
+      {
+        label: "'count on [me]'",
+        nearestLyric: "Ooh, baby, can always count on me",
+        coordinates: [62.59121322631836, 34.85354232788086],
+      },
+    ],
+  },
+
+  {
+    label: "1️⃣ Numbers",
+    nearestLyric: "(One, two, three)",
+    coordinates: [62.76431655883789, 32.867942810058594],
+  },
+
+  {
+    label: "🙏 Pray",
+    nearestLyric: "I pray, pray, pray, everyday",
+    coordinates: [64.59369659423828, 32.316505432128906],
+  },
+
+  {
+    label: "Thanks & Praise",
+    nearestLyric: "Thank you baby thank you baby",
+    coordinates: [66.654052734375, 32.47395324707031],
+    children: [
+      {
+        label: "'thank you'",
+        nearestLyric: "Thank you, thank you",
+        coordinates: [66.64142608642578, 32.162994384765625],
+      },
+
+      {
+        label: "'Hallelujah'",
+        nearestLyric: "Glory Hallelujah (Hallelujah) right here, right now",
+        coordinates: [66.73858642578125, 32.595829010009766],
+      },
+
+      {
+        label: "Gratitude & Luck 🍀",
+        nearestLyric: "I'd thank my lucky stars to be living here today",
+        coordinates: [65.85155487060547, 34.30009078979492],
+      },
+    ],
+  },
+
+  {
+    label: "'Lord' and 'God'",
+    nearestLyric: "Lord, Lord",
+    coordinates: [67.51588439941406, 33.06519317626953],
+  },
+
+  {
+    label: "Trust",
+    nearestLyric: "There's boys you can trust",
+    coordinates: [66.78952026367188, 29.88368034362793],
+  },
+
+  {
+    label: "'jerk'",
+    nearestLyric: "Do the Jerk (Come on girl)",
+    coordinates: [68.6462631225586, 30.665224075317383],
+  },
+
+  {
+    label: "🤫 Secrets",
+    nearestLyric: "Secrets, secrets19",
+    coordinates: [67.89022827148438, 34.29466247558594],
+    children: [
+      {
+        label: "'keep a secret'",
+        nearestLyric: "I'm hoping you can keep a secret",
+        coordinates: [67.73946380615234, 34.40315628051758],
+      },
+
+      {
+        label: "'keep it to yourself",
+        nearestLyric: "I keep them to myself",
+        coordinates: [67.40423583984375, 35.04907989501953],
+      },
+
+      {
+        label: "'want to know a secret?'",
+        nearestLyric: "Do you want to know a secret?",
+        coordinates: [67.8891372680664, 34.21208190917969],
+      },
+    ],
+  },
+
+  {
+    label: "Non-words: 'oh', 'yeah' etc",
+    nearestLyric: "Oh, oh-oh-oh-oh",
+    coordinates: [74.3814697265625, 34.246009826660156],
+    children: [
+      {
+        label: "'ha ha'",
+        nearestLyric: "Ha, ha, ha, ha, ha",
+        coordinates: [76.06089782714844, 36.956199645996094],
+      },
+
+      {
+        label: "'oh, yeah'",
+        nearestLyric: "Oh, oh, yeah",
+        coordinates: [73.84672546386719, 36.39401626586914],
+      },
+
+      {
+        label: "'wooo'",
+        nearestLyric: "Woooooo",
+        coordinates: [72.78620147705078, 36.007850646972656],
+      },
+
+      {
+        label: "'mmm, yeah'",
+        nearestLyric: "Mmm, yeah",
+        coordinates: [75.3963623046875, 38.41709899902344],
+      },
+
+      {
+        label: "'na na na'",
+        nearestLyric: "Na na na na",
+        coordinates: [76.4487075805664, 28.0050048828125],
+      },
+    ],
+  },
+
+  {
+    label: "Endearments",
+    nearestLyric: "Yeah, baby baby baby baby baby, sweet sweet baby",
+    coordinates: [69.55249786376953, 38.19377136230469],
+    children: [
+      {
+        label: "'(sweet) baby'",
+        nearestLyric: "Sweet baby, sweet, baby sweet",
+        coordinates: [69.52962493896484, 38.289878845214844],
+      },
+
+      {
+        label: "'Baby, baby, baby'",
+        nearestLyric: "Baby, baby, baby",
+        coordinates: [70.110595703125, 38.24790573120117],
+      },
+
+      {
+        label: "'Oh baby baby'",
+        nearestLyric: "(Oh baby baby)",
+        coordinates: [70.14073944091797, 37.78351593017578],
+      },
+
+      {
+        label: "'darling'",
+        nearestLyric: "My darling",
+        coordinates: [69.02749633789062, 38.316261291503906],
+      },
+    ],
+  },
+
+  {
+    label: "'no' (repeating)",
+    nearestLyric: "No-no, no, no-no, no-no-no-no",
+    coordinates: [75.40251922607422, 41.357086181640625],
   },
 
   {
@@ -81,6 +525,30 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
       },
 
       {
+        label: "'alright'",
+        nearestLyric: "Alright (Alright)",
+        coordinates: [73.85930633544922, 42.94505310058594],
+      },
+
+      {
+        label: "'what?'",
+        nearestLyric: "(What?)",
+        coordinates: [72.37736511230469, 40.73339080810547],
+      },
+
+      {
+        label: "'tell me'",
+        nearestLyric: "Tell me",
+        coordinates: [71.33364868164062, 41.742061614990234],
+      },
+
+      {
+        label: "'say no'",
+        nearestLyric: "And don't say no, honey",
+        coordinates: [72.18724822998047, 41.9770393371582],
+      },
+
+      {
         label: "'words'",
         nearestLyric: "To say these words to you",
         coordinates: [68.03060150146484, 41.103187561035156],
@@ -91,6 +559,36 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
             coordinates: [67.89266967773438, 41.21478271484375],
           },
         ],
+      },
+    ],
+  },
+
+  {
+    label: "Chance & Risk",
+    nearestLyric: "I'll take my share of chances",
+    coordinates: [65.48275756835938, 37.49410629272461],
+    children: [
+      {
+        label: "'risk'",
+        nearestLyric: "The risk that I'm takin'",
+        coordinates: [65.2879638671875, 37.3307991027832],
+      },
+
+      {
+        label: "'take a chance'",
+        nearestLyric: "(Take a chance, take a chance, take a chance on me)",
+        coordinates: [65.6971435546875, 37.244544982910156],
+      },
+
+      {
+        label: "'one more chance'",
+        nearestLyric: "Won't you just give me one chance?",
+        coordinates: [65.77791595458984, 37.15735626220703],
+      },
+      {
+        label: "'second chance'",
+        nearestLyric: "There ain't no second chance",
+        coordinates: [65.94288635253906, 36.92943572998047],
       },
     ],
   },
