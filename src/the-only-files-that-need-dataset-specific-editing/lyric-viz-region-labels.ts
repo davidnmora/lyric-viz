@@ -293,6 +293,124 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
   },
 
   {
+    label: "Voices",
+    nearestLyric: "My voice is gone, my throat is sore",
+    coordinates: [58.69257736206055, 34.87816619873047],
+    children: [
+      {
+        label: "'whisper in my/your ear'",
+        nearestLyric: "Whisper in my ear, baby",
+        coordinates: [58.244415283203125, 35.029170989990234],
+      },
+      {
+        label: "'your voice'",
+        nearestLyric: "I still hear your voice in the traffic, we're laughing",
+        coordinates: [58.87189865112305, 35.004058837890625],
+      },
+    ],
+  },
+
+  {
+    label: "Silence",
+    nearestLyric: "Silence like a cancer grows",
+    coordinates: [58.72107696533203, 36.748966217041016],
+  },
+
+  {
+    label: "🕰️ Time",
+    nearestLyric: "Making the time",
+    coordinates: [62.830928802490234, 38.715213775634766],
+    children: [
+      {
+        label: "'wasting time'",
+        nearestLyric: "Now, don't go wasting my precious time",
+        coordinates: [63.09548568725586, 37.32266616821289],
+      },
+      {
+        label: "'no matter how long it takes'",
+        nearestLyric: "No matter how long it takes",
+        coordinates: [62.77116775512695, 37.76485824584961],
+      },
+      {
+        label: "lack of time",
+        nearestLyric: "And I haven't got time to do no studies",
+        coordinates: [62.73259353637695, 38.379600524902344],
+      },
+      {
+        label: "'time flies/slows'",
+        nearestLyric: "Time just seems to fly",
+        coordinates: [63.01313400268555, 38.832298278808594],
+      },
+      {
+        label: "'time of my life'",
+        nearestLyric: "I-I-I-I've had the time of my li-i-ife",
+        coordinates: [62.94290542602539, 38.85007858276367],
+      },
+      {
+        label: "'wait a minute'",
+        nearestLyric: "You better wait a minute, wait a minute",
+        coordinates: [62.520870208740234, 39.10578918457031],
+      },
+
+      {
+        label: "'matter of time'",
+        nearestLyric: "They say it's just a matter of time",
+        coordinates: [63.24565887451172, 39.92314147949219],
+      },
+      {
+        label: "'right now'",
+        nearestLyric: "Right now",
+        coordinates: [62.86798858642578, 40.56957244873047],
+      },
+      {
+        label: "Time Past",
+        nearestLyric: "From a long time ago",
+        coordinates: [62.19633865356445, 41.38031768798828],
+        children: [
+          {
+            label: "'long ago'",
+            nearestLyric: "A long, long time ago",
+            coordinates: [62.289520263671875, 41.425384521484375],
+          },
+        ],
+      },
+      {
+        label: "'all this time'",
+        nearestLyric: "All this time",
+        coordinates: [62.74906921386719, 42.06657791137695],
+      },
+
+      {
+        label: "'it's over'",
+        nearestLyric: "It's over",
+        coordinates: [63.2464714050293, 42.276126861572266],
+      },
+      {
+        label: "'too late'",
+        nearestLyric: "You say it's too late to make it",
+        coordinates: [60.93968963623047, 37.52754211425781],
+      },
+      {
+        label: "'future'",
+        nearestLyric: "My future held in store",
+        coordinates: [61.20341491699219, 39.236167907714844],
+      },
+
+      {
+        label: "today/tomorrow/day",
+        nearestLyric: "Who knows what tomorrow brings",
+        coordinates: [60.359954833984375, 39.775997161865234],
+      },
+    ],
+  },
+
+  {
+    label: "'do it again'",
+    nearestLyric: "Do it again (Do it)",
+    coordinates: [64.67884063720703, 40.27757263183594],
+  },
+
+  {
     label: "📱 Calling",
     nearestLyric: "Though you don't call anymore",
     coordinates: [59.972808837890625, 34.012420654296875],
@@ -317,6 +435,17 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
         label: "'hang/pick up",
         nearestLyric: "Don't hang up",
         coordinates: [59.80107879638672, 33.468448638916016],
+      },
+      {
+        label: "'call my/your name'",
+        nearestLyric: "Just call my name",
+        coordinates: [60.8769416809082, 34.583892822265625],
+      },
+
+      {
+        label: "'what's your name?'",
+        nearestLyric: "What's your name?",
+        coordinates: [61.41692352294922, 34.73121643066406],
       },
     ],
   },
@@ -425,6 +554,23 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
     nearestLyric: "Oh, oh-oh-oh-oh",
     coordinates: [74.3814697265625, 34.246009826660156],
     children: [
+      {
+        label: "'hey'",
+        nearestLyric: "Hey, hey, hey, hey",
+        coordinates: [70.57931518554688, 32.79389190673828],
+        children: [
+          {
+            label: "'hey, baby'",
+            nearestLyric: "Hey, baby",
+            coordinates: [69.45189666748047, 34.66490173339844],
+          },
+        ],
+      },
+      {
+        label: "'yo'",
+        nearestLyric: "Yo, yo",
+        coordinates: [71.41029357910156, 34.6879768371582],
+      },
       {
         label: "'ha ha'",
         nearestLyric: "Ha, ha, ha, ha, ha",
