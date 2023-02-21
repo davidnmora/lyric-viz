@@ -10,6 +10,406 @@ type RawLabel = {
 
 const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
   {
+    label: "🚂 Trains",
+    nearestLyric: "Gone catch me a train",
+    coordinates: [34.531471252441406, 44.52962875366211],
+  },
+  {
+    label: "Gang & Crime",
+    nearestLyric: "Let me show you what a thug got, born to die",
+    coordinates: [40.17561340332031, 46.484615325927734],
+  },
+  {
+    label: "'dip'",
+    nearestLyric:
+      "Dip, baby, dip (Just dip, baby), dip, baby, dip (Just dip, baby)",
+    coordinates: [39.5433349609375, 49.53059387207031],
+  },
+  {
+    label: "'whip'",
+    nearestLyric: "Brand new whip got no keys",
+    coordinates: [40.467369079589844, 50.193580627441406],
+  },
+  {
+    label: "'chain'",
+    nearestLyric: "I'm added to your chain, chain, chain",
+    coordinates: [39.93423843383789, 51.98819351196289],
+  },
+
+  {
+    label: "Rain 🌧️",
+    nearestLyric: "Got rained on too",
+    coordinates: [34.82866668701172, 51.63480758666992],
+  },
+
+  {
+    label: "💎 Bling",
+    nearestLyric: "And if that diamond ring won't shine",
+    coordinates: [38.38007354736328, 51.97138214111328],
+    children: [
+      {
+        label: "'diamonds'",
+        nearestLyric:
+          "Boy stop, brimming with diamonds but that don't mean shit",
+        coordinates: [38.443058013916016, 51.701351165771484],
+      },
+
+      {
+        label: "'wedding ring'",
+        nearestLyric: "Thoughts of a wedding ring",
+        coordinates: [38.31987380981445, 52.277164459228516],
+      },
+    ],
+  },
+
+  {
+    label: "Haters",
+    nearestLyric: "When your fans become your haters",
+    coordinates: [51.74882125854492, 51.5303840637207],
+  },
+  {
+    label: "'hold you'",
+    nearestLyric: "If I could just hold you",
+    coordinates: [52.28587341308594, 51.44916534423828],
+  },
+
+  {
+    label: "'touch me/you'",
+    nearestLyric: "Touch me, touch me, touch me (This is the night)",
+    coordinates: [49.567752838134766, 54.59016799926758],
+  },
+
+  {
+    label: "'you look' (nice)",
+    nearestLyric: "You look so sweet",
+    coordinates: [51.377723693847656, 54.931495666503906],
+  },
+
+  {
+    label: "Strength & Weakness",
+    nearestLyric: "Starting right now, I'll be strong (I'll be strong)",
+    coordinates: [52.647274017333984, 55.87352752685547],
+  },
+
+  {
+    label: "Fool",
+    nearestLyric: "I'll be a fool for you",
+    coordinates: [54.15382766723633, 56.61220169067383],
+  },
+
+  {
+    label: "Freedom",
+    nearestLyric: "Be free, live free",
+    coordinates: [50.27372360229492, 58.32689666748047],
+    children: [
+      {
+        label: "'set me free'",
+        nearestLyric: "Set me free, uh",
+        coordinates: [49.956085205078125, 58.333457946777344],
+      },
+      {
+        label: "'freedom'",
+        nearestLyric: "Oh oh freedom (Freedom)",
+        coordinates: [49.23148727416992, 59.34634780883789],
+      },
+    ],
+  },
+
+  {
+    label: "Anger & Upsetness",
+    nearestLyric: "You're mad I'm back, big mad",
+    coordinates: [53.1955451965332, 58.05927276611328],
+  },
+
+  {
+    label: "'the power of love'",
+    nearestLyric: "That's the power, that's the power of love",
+    coordinates: [52.61435317993164, 59.055145263671875],
+  },
+
+  {
+    label: "Peacefulness",
+    nearestLyric: "Aw, leave me alone",
+    coordinates: [50.63786315917969, 60.180599212646484],
+  },
+
+  {
+    label: "Loneliness",
+    nearestLyric: "It's too lonesome down here below",
+    coordinates: [48.7203369140625, 61.89958953857422],
+    children: [
+      {
+        label: "'leave me alone'",
+        nearestLyric: "Aw, leave me alone",
+        coordinates: [50.63786315917969, 60.180599212646484],
+      },
+
+      {
+        label: "'on my/your own'",
+        nearestLyric: "Always on my own",
+        coordinates: [49.804752349853516, 60.914764404296875],
+      },
+
+      {
+        label: "(don't want to be) 'lonely'",
+        nearestLyric: "I don't wanna be lonely anymore",
+        coordinates: [48.81162643432617, 62.35134506225586],
+      },
+      {
+        label: "(don't like being alone)",
+        nearestLyric: "Nobody wants to be alone",
+        coordinates: [49.14287185668945, 61.73708724975586],
+      },
+    ],
+  },
+
+  {
+    label: "Mothers & Fathers",
+    nearestLyric: "Hey Mama, won't you come here to Papa?",
+    coordinates: [47.43101119995117, 58.151588439941406],
+    children: [
+      {
+        label: "I told Mamma",
+        nearestLyric: "Mama, just killed a man",
+        coordinates: [47.26866149902344, 57.5297737121582],
+      },
+
+      {
+        label: "'Mamma told me'",
+        nearestLyric: "Mama told me, told me, ooh, yeah, yeah",
+        coordinates: [47.564022064208984, 57.675132751464844],
+      },
+      {
+        label: "'dad/daddy'",
+        nearestLyric: "My daddy was",
+        coordinates: [48.24274826049805, 58.09272003173828],
+      },
+
+      {
+        label: "Daddy disaproval",
+        nearestLyric: "And your Daddy don't approve",
+        coordinates: [47.78211212158203, 58.47633361816406],
+      },
+      {
+        label: "Dad Influence",
+        nearestLyric: "I let my father mold me",
+        coordinates: [48.06008529663086, 58.36526107788086],
+      },
+    ],
+  },
+
+  {
+    label: "Smile 😀",
+    nearestLyric: "I could smile for a while",
+    coordinates: [50.80093765258789, 57.388336181640625],
+  },
+
+  {
+    label: "Money 💰",
+    nearestLyric: "I got my money, let's spend it up (I feel-)",
+    coordinates: [45.834529876708984, 52.75274658203125],
+  },
+
+  {
+    label: "Hunger",
+    nearestLyric: "Gettin' kinda hungry",
+    coordinates: [45.68716049194336, 54.11912536621094],
+  },
+
+  {
+    label: "Respect",
+    nearestLyric: "A little respect",
+    coordinates: [43.72726821899414, 53.55818557739258],
+  },
+
+  {
+    label: "Fame",
+    nearestLyric: "Fame (Fame)",
+    coordinates: [44.3107795715332, 54.558231353759766],
+  },
+
+  {
+    label: "Hot & Cold",
+    nearestLyric: "Going hot, so hot, just like an oven",
+    coordinates: [42.170555114746094, 55.69506072998047],
+    children: [
+      {
+        label: "(you make me) hot",
+        nearestLyric: "You make my temperature rise (ooh, baby)",
+        coordinates: [42.490623474121094, 55.98553466796875],
+      },
+    ],
+  },
+
+  {
+    label: "🌸Flowers & Candles",
+    nearestLyric: "You don't bring me flowers",
+    coordinates: [39.732078552246094, 53.48253631591797],
+    children: [
+      {
+        label: "(red) roses",
+        nearestLyric: "Sunlight, red red roses",
+        coordinates: [39.34678649902344, 53.544437408447266],
+      },
+    ],
+  },
+  {
+    label: "🔥 Fire",
+    nearestLyric: "You can't fight fire with fire",
+    coordinates: [40.368186950683594, 54.87909698486328],
+    children: [
+      {
+        label: "'(let it) burn'",
+        nearestLyric:
+          "Let it burn (Let it burn, let it burn), let it burn, gotta let it burn",
+        coordinates: [40.582340240478516, 54.508880615234375],
+      },
+    ],
+  },
+
+  {
+    label: "Alcohol",
+    nearestLyric: "Got a Hennessy in my hand",
+    coordinates: [40.904476165771484, 49.80786895751953],
+    children: [
+      {
+        label: "'jin and juice'",
+        nearestLyric: "The boys say they want some gin and juice",
+        coordinates: [41.03731918334961, 49.94264221191406],
+      },
+    ],
+  },
+  {
+    label: "Drugs",
+    nearestLyric: "'Cause the codeine had a young nigga swervin'",
+    coordinates: [41.600608825683594, 50.34968185424805],
+  },
+
+  {
+    label: "'shawty'",
+    nearestLyric: "Shawty I was just playing",
+    coordinates: [39.23554229736328, 47.01697540283203],
+    children: [
+      {
+        label: "'shorty' alt. spelling",
+        nearestLyric: "Shorty all on me 'cause it's hard to resist the kid",
+        coordinates: [39.58342742919922, 47.9907112121582],
+      },
+    ],
+  },
+  {
+    label: "👑Kings & Queens",
+    nearestLyric: "You're the king, baby, I'm your queen",
+    coordinates: [37.96351623535156, 47.98604965209961],
+  },
+  {
+    label: "'ayy'",
+    nearestLyric: "Woah, oh-oh (Ayy, ayy, ayy)",
+    coordinates: [36.476505279541016, 47.99565505981445],
+  },
+
+  {
+    label: "Rap-centric",
+    nearestLyric: "Knowing he could rap",
+    coordinates: [40.10482406616211, 44.57717514038086],
+    children: [
+      {
+        label: "'flow'",
+        nearestLyric: "Flow so smooth like it’s ‘93",
+        coordinates: [39.98502731323242, 44.14582061767578],
+      },
+      {
+        label: "'rapper'",
+        nearestLyric: "Best rapper alive",
+        coordinates: [39.744510650634766, 45.11393737792969],
+      },
+      {
+        label: "'hip-hop'",
+        nearestLyric: "Hip-Hop, I'm the heart of that",
+        coordinates: [39.714839935302734, 44.490081787109375],
+      },
+      {
+        label: "Rap Icons",
+        nearestLyric: "Na-na-na-na-na-na, Kid Cudi",
+        coordinates: [39.11989212036133, 45.52992248535156],
+        children: [
+          {
+            label: "Slim Shady (Emminem)",
+            nearestLyric: "In every single person there’s a Slim Shady lurking",
+            coordinates: [36.71052169799805, 45.52849578857422],
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    label: "n-word used as subject",
+    nearestLyric: "Niggas can't take me, niggas can't guard me",
+    coordinates: [42.0048828125, 47.121498107910156],
+  },
+
+  {
+    label: "'shake it'",
+    nearestLyric: "Tell 'em to shake it! (Shake it!) Shake it! (Shake it!)",
+    coordinates: [40.65058898925781, 43.083248138427734],
+    children: [
+      {
+        label: "'wiggle'",
+        nearestLyric: "Wiggle, wiggle, wiggle (Wiggle, wiggle, wiggle)",
+        coordinates: [41.912845611572266, 43.40365219116211],
+      },
+    ],
+  },
+
+  {
+    label: "🚙 Cars",
+    nearestLyric: "You say you wanna get in my Benz?",
+    coordinates: [44.964298248291016, 43.43436050415039],
+    children: [
+      {
+        label: "Cadillac",
+        nearestLyric: "The Sheikh he drove his Cadillac",
+        coordinates: [45.29256820678711, 43.485172271728516],
+      },
+      {
+        label: "Lambo",
+        nearestLyric: "The Sheikh he drove his Cadillac",
+        coordinates: [45.29256820678711, 43.485172271728516],
+      },
+      {
+        label: "Jag",
+        nearestLyric: "And rolled down the window of his shiny new Jag",
+        coordinates: [46.037925720214844, 44.16994094848633],
+      },
+
+      {
+        label: "Benz",
+        nearestLyric: "The new Mercedes with black G-Wagon",
+        coordinates: [44.90475845336914, 43.760704040527344],
+      },
+
+      {
+        label: "'the drive-in'",
+        nearestLyric: "One night at the drive-in",
+        coordinates: [47.442935943603516, 41.84071731567383],
+      },
+
+      {
+        label: "'riding' & car metaphors",
+        nearestLyric: "She's riding, ain't no stopping me now",
+        coordinates: [46.60078048706055, 42.67316818237305],
+      },
+    ],
+  },
+
+  {
+    label: "American South",
+    nearestLyric: "Gettin' born in the state of Mississippi",
+    coordinates: [40.71299743652344, 41.144065856933594],
+  },
+
+  {
     label: "La La Land",
     nearestLyric: "La da la da di da da, la da da da da",
     coordinates: [54.82959747314453, 22.986899316310883],
@@ -29,16 +429,46 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
         nearestLyric: "You gotta get on the groove",
         coordinates: [36.529319763183594, 37.39140701293945],
       },
-
       {
         label: "'bass'",
         nearestLyric: "You gotta get on the groove",
         coordinates: [36.529319763183594, 37.39140701293945],
       },
       {
-        label: "🪘 Drums & rhthm",
+        label: "'poetry'",
+        nearestLyric: "It's poetry in motion",
+        coordinates: [39.18756866455078, 40.34760284423828],
+      },
+
+      {
+        label: "'rhyme'",
+        nearestLyric: "Shout out the rhymes",
+        coordinates: [39.105674743652344, 40.88705062866211],
+      },
+      {
+        label: "🪘 Drums & rhythm",
         nearestLyric: "Drums keep pounding a rhythm to the brain",
         coordinates: [39.69491958618164, 38.74080276489258],
+      },
+      {
+        label: "'rock and roll'",
+        nearestLyric: "Rock and roll and roll (And roll) and rock",
+        coordinates: [41.24711990356445, 38.397682189941406],
+      },
+      {
+        label: "'the beat'",
+        nearestLyric: "Feel that beat",
+        coordinates: [40.52006912231445, 39.52698516845703],
+      },
+      {
+        label: "'rock'",
+        nearestLyric: "I wanna, I wanna rock",
+        coordinates: [41.49299621582031, 39.76905059814453],
+      },
+      {
+        label: "🎤 'the mic'",
+        nearestLyric: "My mic sounds nice",
+        coordinates: [42.40559005737305, 39.769222259521484],
       },
 
       {
@@ -290,6 +720,31 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
     label: "'make a move'",
     nearestLyric: "Make a move, but be calm",
     coordinates: [57.894386291503906, 32.50066375732422],
+  },
+
+  {
+    label: "'every day'",
+    nearestLyric: "Every day (Every day)",
+    coordinates: [56.38615798950195, 34.54317855834961],
+  },
+
+  {
+    label: "'can't you see?'",
+    nearestLyric: "Can't you see",
+    coordinates: [56.94762420654297, 36.899349212646484],
+  },
+
+  {
+    label: "'check (it)",
+    nearestLyric: "(Check it)",
+    coordinates: [57.439849853515625, 36.68452453613281],
+  },
+
+  {
+    label: "Mirror",
+    nearestLyric:
+      "I'm starting with the man in the mirror (Man in the mirror, oh yeah)",
+    coordinates: [55.2398681640625, 36.121246337890625],
   },
 
   {
