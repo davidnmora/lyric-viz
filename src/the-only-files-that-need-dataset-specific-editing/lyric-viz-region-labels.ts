@@ -116,6 +116,166 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
   },
 
   {
+    label: "'Fantasy' & 'Imagination'",
+    nearestLyric: "When you fulfill my fantasy (Uh-huh)",
+    coordinates: [58.39752197265625, 66.8169937133789],
+    children: [
+      {
+        label: "'illusion'",
+        nearestLyric: "This is a life of illusion, wrapped up in trouble",
+        coordinates: [58.07051086425781, 67.25687408447266],
+      },
+
+      {
+        label: "'fairytale'",
+        nearestLyric: "Today was a fairytale, all that I can say",
+        coordinates: [60.04313278198242, 67.39440155029297],
+      },
+    ],
+  },
+
+  {
+    label: "Lies",
+    nearestLyric: "I will never lie again (I will never lie again)",
+    coordinates: [62.18107223510742, 68.65020751953125],
+  },
+  {
+    label: "'it is/can't be true'",
+    nearestLyric: "Yes, it's true",
+    coordinates: [63.34138107299805, 70.32503509521484],
+  },
+  {
+    label: "Believe",
+    nearestLyric: "And you better believe",
+    coordinates: [64.89691925048828, 68.47879028320312],
+    children: [
+      {
+        label: "'please believe me'",
+        nearestLyric: "So please believe me",
+        coordinates: [65.21016693115234, 68.42491912841797],
+      },
+      {
+        label: "'I can't belive'",
+        nearestLyric: "I just can't believe",
+        coordinates: [64.65770721435547, 69.18167877197266],
+      },
+
+      {
+        label: "'(have) faith'",
+        nearestLyric: "Gotta have some faith in the sound",
+        coordinates: [65.75682830810547, 69.78514099121094],
+      },
+    ],
+  },
+
+  {
+    label: "Remember & Forget",
+    nearestLyric: "Remember those who win the game",
+    coordinates: [54.347328186035156, 70.26811981201172],
+    children: [
+      {
+        label: "'memories'",
+        nearestLyric: "Brings back memories",
+        coordinates: [53.49637222290039, 69.60269165039062],
+      },
+    ],
+  },
+
+  {
+    label: "'miss you/me'",
+    nearestLyric: "I'm gonna miss you",
+    coordinates: [57.25995635986328, 69.40413665771484],
+  },
+
+  {
+    label: "Realness & Authenticity",
+    nearestLyric: "Seemed so very real, it seemed so real to me",
+    coordinates: [60.18147277832031, 69.52727508544922],
+  },
+
+  {
+    label: "Confession",
+    nearestLyric: "But, darling, I've gotta confess",
+    coordinates: [67.00687408447266, 68.36579895019531],
+  },
+
+  {
+    label: "Blame",
+    nearestLyric: "I don't understand why you blame me",
+    coordinates: [65.77816009521484, 73.45915985107422],
+  },
+
+  {
+    label: "'How deep is your love?'",
+    nearestLyric: "How deep is your love for me (How deep, how deep)",
+    coordinates: [58.45049285888672, 65.11143493652344],
+  },
+
+  {
+    label: "Saving",
+    nearestLyric: "You're gonna be the one that saves me (That saves me)",
+    coordinates: [57.65751647949219, 64.74127960205078],
+  },
+
+  {
+    label: "Surprise!",
+    nearestLyric: "Sometimes it's all a big surprise",
+    coordinates: [58.34808349609375, 64.52204132080078],
+  },
+
+  {
+    label: "' 'Cause...'",
+    nearestLyric: "'Cause baby, you're a firework",
+    coordinates: [56.83268356323242, 57.461524963378906],
+  },
+
+  {
+    label: "Feel(ing)",
+    nearestLyric: "I can feel the spirits all around me",
+    coordinates: [53.70606231689453, 60.369239807128906],
+    children: [
+      {
+        label: "'you make me feel'",
+        nearestLyric: "You make me feel like I am whole again",
+        coordinates: [55.315364837646484, 59.762210845947266],
+      },
+
+      {
+        label: "'a/this feeling'",
+        nearestLyric: "It's a feeling like this",
+        coordinates: [54.783935546875, 60.97815704345703],
+      },
+      {
+        label: "'never felt this way before'",
+        nearestLyric: "And I never felt this way before-fore",
+        coordinates: [55.23740768432617, 60.58941650390625],
+      },
+      {
+        label: "'feels right'",
+        nearestLyric: "Nothing has ever felt so right",
+        coordinates: [55.009422302246094, 60.739097595214844],
+      },
+      {
+        label: "'feels so good'",
+        nearestLyric: "Feels so good",
+        coordinates: [55.71792984008789, 61.19337844848633],
+      },
+
+      {
+        label: "'feel it in (the air)'",
+        nearestLyric: "Feel it comin' in the air (Yeah)",
+        coordinates: [53.57101058959961, 60.69075012207031],
+      },
+
+      {
+        label: "'feels like the first time'",
+        nearestLyric: "Feels like the first time",
+        coordinates: [51.95426940917969, 60.794559478759766],
+      },
+    ],
+  },
+
+  {
     label: "Anger & Upsetness",
     nearestLyric: "You're mad I'm back, big mad",
     coordinates: [53.1955451965332, 58.05927276611328],
@@ -125,6 +285,12 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
     label: "'the power of love'",
     nearestLyric: "That's the power, that's the power of love",
     coordinates: [52.61435317993164, 59.055145263671875],
+  },
+
+  {
+    label: "'Deep (down)'",
+    nearestLyric: "'Cause somewhere deep down inside",
+    coordinates: [52.773826599121094, 60.84505081176758],
   },
 
   {
