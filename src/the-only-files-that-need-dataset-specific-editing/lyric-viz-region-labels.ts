@@ -74,9 +74,27 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
   },
 
   {
+    label: "Hand holding",
+    nearestLyric: "Take me by the hand, take me somewhere new",
+    coordinates: [49.70836639404297, 51.03889083862305],
+  },
+
+  {
+    label: "Holding (in arms)",
+    nearestLyric: "Better than my arms can hold you",
+    coordinates: [50.50023651123047, 52.12309646606445],
+  },
+
+  {
     label: "'touch me/you'",
     nearestLyric: "Touch me, touch me, touch me (This is the night)",
     coordinates: [49.567752838134766, 54.59016799926758],
+  },
+
+  {
+    label: "Brothers & Sisters",
+    nearestLyric: "Brothers and sisters, they've always been there for me",
+    coordinates: [49.022403717041016, 56.32489013671875],
   },
 
   {
@@ -218,6 +236,17 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
   },
 
   {
+    label: "Shame & Disgrace",
+    nearestLyric: "Everybody says it was a shame",
+    coordinates: [56.842132568359375, 65.36166381835938],
+  },
+  {
+    label: "Pride",
+    nearestLyric: "I'm going to swallow my pride (My pride)",
+    coordinates: [56.27005386352539, 66.51325988769531],
+  },
+
+  {
     label: "Surprise!",
     nearestLyric: "Sometimes it's all a big surprise",
     coordinates: [58.34808349609375, 64.52204132080078],
@@ -295,8 +324,8 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
 
   {
     label: "Peacefulness",
-    nearestLyric: "Aw, leave me alone",
-    coordinates: [50.63786315917969, 60.180599212646484],
+    nearestLyric: "Peace of mind",
+    coordinates: [51.69013214111328, 59.21094512939453],
   },
 
   {
@@ -580,6 +609,23 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
     nearestLyric: "La da la da di da da, la da da da da",
     coordinates: [54.82959747314453, 22.986899316310883],
   },
+
+  {
+    label: "'dig it'",
+    nearestLyric: "You can dig it, and if you dig it",
+    coordinates: [63.36491394042969, 24.802574157714844],
+  },
+  {
+    label: "'step (by step)'",
+    nearestLyric: "(Step by step) Oh girl",
+    coordinates: [62.137535095214844, 29.840621948242188],
+  },
+  {
+    label: "'shy'",
+    nearestLyric: "So shy, so shy, so shy, so shy",
+    coordinates: [61.3153076171875, 30.990739822387695],
+  },
+
   {
     label: "Dream Island",
     nearestLyric: "Everything That I've been dreaming of",
@@ -1758,6 +1804,12 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
         nearestLyric: "(I'll never hurt you)",
         coordinates: [57.41193771362305, 62.78031539916992],
       },
+
+      {
+        label: "Sorrow",
+        nearestLyric: "Don't let it end in sorrow",
+        coordinates: [54.73960876464844, 63.03914260864258],
+      },
     ],
   },
 
@@ -1844,6 +1896,11 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
             coordinates: [52.17909812927246, 63.68600130081177],
           },
         ],
+      },
+      {
+        label: "'heart beat(ing)'",
+        nearestLyric: "Do you feel my heart beating?",
+        coordinates: [52.229129791259766, 66.03169250488281],
       },
     ],
   },
