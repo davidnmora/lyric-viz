@@ -394,6 +394,61 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
   },
 
   {
+    label: "Kiss 💋",
+    nearestLyric: "If you give me just a one sweet kiss",
+    coordinates: [44.549739837646484, 59.666107177734375],
+  },
+
+  {
+    label: "Magic 🪄",
+    nearestLyric: "Magic, magic, magic",
+    coordinates: [45.62454605102539, 63.12997055053711],
+  },
+
+  {
+    label: "Heaven & Eternity",
+    nearestLyric: "Well I'm in heaven (heaven)",
+    coordinates: [42.750789642333984, 64.0047836303711],
+    children: [
+      {
+        label: "'paradise'",
+        nearestLyric: "It's just a step up to paradise",
+        coordinates: [42.26776885986328, 64.26175689697266],
+      },
+      {
+        label: "'heaven and earth",
+        nearestLyric: "Move heaven and Earth",
+        coordinates: [42.756309509277344, 63.594844818115234],
+      },
+    ],
+  },
+
+  {
+    label: "Goodbye",
+    nearestLyric: "How to tell you goodbye",
+    coordinates: [43.70460510253906, 68.87226867675781],
+    children: [
+      {
+        label: "'say goodbye'",
+        nearestLyric: "And if you should say goodbye",
+        coordinates: [43.7729606628418, 68.67640686035156],
+      },
+    ],
+  },
+
+  {
+    label: "Signs",
+    nearestLyric: "And give me a sign",
+    coordinates: [46.61939239501953, 69.38007354736328],
+  },
+
+  {
+    label: "Spanish Language",
+    nearestLyric: "Soy capitán, soy capitán",
+    coordinates: [36.1174430847168, 67.46347045898438],
+  },
+
+  {
     label: "Smile 😀",
     nearestLyric: "I could smile for a while",
     coordinates: [50.80093765258789, 57.388336181640625],
@@ -409,6 +464,12 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
     label: "Hunger",
     nearestLyric: "Gettin' kinda hungry",
     coordinates: [45.68716049194336, 54.11912536621094],
+  },
+
+  {
+    label: "Blood 🩸",
+    nearestLyric: "And taste the blood from my blade",
+    coordinates: [45.81208419799805, 55.36198806762695],
   },
 
   {
@@ -432,6 +493,11 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
         label: "(you make me) hot",
         nearestLyric: "You make my temperature rise (ooh, baby)",
         coordinates: [42.490623474121094, 55.98553466796875],
+      },
+      {
+        label: "Chills & shivers",
+        nearestLyric: "Baby, ooh, I get chills",
+        coordinates: [44.91657638549805, 56.38071823120117],
       },
     ],
   },
@@ -786,6 +852,36 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
         label: "Night",
         nearestLyric: "This is the night",
         coordinates: [51.59398651123047, 33.99238204956055],
+        children: [
+          {
+            label: "'day and night'",
+            nearestLyric: "Day and night, night and day",
+            coordinates: [51.13328170776367, 32.735740661621094],
+          },
+
+          {
+            label: "'all night long'",
+            nearestLyric: "All night long",
+            coordinates: [52.04818344116211, 32.02931594848633],
+          },
+
+          {
+            label: "'tonight'",
+            nearestLyric: "Tonight, tonight, tonight, oh",
+            coordinates: [53.52393341064453, 33.746910095214844],
+          },
+          {
+            label: "'one more night'",
+            nearestLyric: "Give me one more night, give me just one more night",
+            coordinates: [52.82344055175781, 32.92210006713867],
+          },
+
+          {
+            label: "'can't sleep'",
+            nearestLyric: "Sometimes, I can't sleep at night and",
+            coordinates: [52.44939041137695, 35.56325912475586],
+          },
+        ],
       },
 
       {
