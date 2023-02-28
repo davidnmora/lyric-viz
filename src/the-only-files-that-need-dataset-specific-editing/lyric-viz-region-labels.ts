@@ -63,6 +63,12 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
   },
 
   {
+    label: "Playing games",
+    nearestLyric: "Baby, oh-oh, quit playing games",
+    coordinates: [54.63346862792969, 51.35596466064453],
+  },
+
+  {
     label: "Haters",
     nearestLyric: "When your fans become your haters",
     coordinates: [51.74882125854492, 51.5303840637207],
@@ -250,6 +256,18 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
     label: "Surprise!",
     nearestLyric: "Sometimes it's all a big surprise",
     coordinates: [58.34808349609375, 64.52204132080078],
+  },
+
+  {
+    label: "'bad boy'",
+    nearestLyric: "Bad Boy heat the place",
+    coordinates: [56.341896057128906, 55.04058837890625],
+  },
+
+  {
+    label: "'my friends'",
+    nearestLyric: "Listening to my friends talk about it all",
+    coordinates: [58.539100646972656, 54.37824249267578],
   },
 
   {
@@ -608,6 +626,43 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
     label: "n-word used as subject",
     nearestLyric: "Niggas can't take me, niggas can't guard me",
     coordinates: [42.0048828125, 47.121498107910156],
+  },
+
+  {
+    label: "Guns 🔫",
+    nearestLyric: "Still'll shoot (Shoot up, brrt, shit)",
+    coordinates: [45.09806823730469, 46.64035415649414],
+  },
+
+  {
+    label: "'bang'",
+    nearestLyric: "Bang! Bang! Bang! (Bang, bang-bang-bang-bang)",
+    coordinates: [45.693050384521484, 45.24973678588867],
+  },
+
+  {
+    label: "'hit me'",
+    nearestLyric: "Hit me (Hit me!)",
+    coordinates: [47.58660888671875, 47.993770599365234],
+  },
+
+  {
+    label: "Feet 🦶, Knees, Bodies",
+    nearestLyric: "You think you'll knock me off my feet",
+    coordinates: [49.231239318847656, 47.9981689453125],
+  },
+
+  {
+    label: "'get down'",
+    nearestLyric:
+      "I don't get down on the first night (I don't, I don't get down, baby)",
+    coordinates: [49.6734504699707, 44.29307556152344],
+  },
+
+  {
+    label: "Falling",
+    nearestLyric: "Falling back on mе, falling back on me",
+    coordinates: [50.945499420166016, 46.0402717590332],
   },
 
   {
@@ -1037,22 +1092,63 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
   },
 
   {
-    label: "'can't you see?'",
-    nearestLyric: "Can't you see",
-    coordinates: [56.94762420654297, 36.899349212646484],
+    label: "Sight & Visibility",
+    nearestLyric: "Take a look at yourself and",
+    coordinates: [55.80326461791992, 38.01304626464844],
+    children: [
+      {
+        label: "Mirror",
+        nearestLyric:
+          "I'm starting with the man in the mirror (Man in the mirror, oh yeah)",
+        coordinates: [55.2398681640625, 36.121246337890625],
+      },
+      {
+        label: "'can't you see?'",
+        nearestLyric: "Can't you see",
+        coordinates: [56.94762420654297, 36.899349212646484],
+      },
+
+      {
+        label: "'I see'",
+        nearestLyric: "And now I see",
+        coordinates: [56.914329528808594, 38.57001876831055],
+      },
+
+      {
+        label: "Eyes 👀",
+        nearestLyric: "In your eyes",
+        coordinates: [54.06130599975586, 37.73246383666992],
+        children: [
+          {
+            label: "'look into your eyes'",
+            nearestLyric: "When I look into your eyes",
+            coordinates: [54.57991027832031, 37.458763122558594],
+          },
+          {
+            label: "'open my/your eyes'",
+            nearestLyric: "To open my eyes",
+            coordinates: [54.03666687011719, 37.11865997314453],
+          },
+          {
+            label: "'close my eyes'",
+            nearestLyric: "I close my eyes",
+            coordinates: [53.421207427978516, 37.03165054321289],
+          },
+        ],
+      },
+
+      {
+        label: "Watching you",
+        nearestLyric: "Watching you, yeah",
+        coordinates: [54.630855560302734, 39.73262023925781],
+      },
+    ],
   },
 
   {
     label: "'check (it)",
     nearestLyric: "(Check it)",
     coordinates: [57.439849853515625, 36.68452453613281],
-  },
-
-  {
-    label: "Mirror",
-    nearestLyric:
-      "I'm starting with the man in the mirror (Man in the mirror, oh yeah)",
-    coordinates: [55.2398681640625, 36.121246337890625],
   },
 
   {
@@ -1401,6 +1497,12 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
     label: "'no' (repeating)",
     nearestLyric: "No-no, no, no-no, no-no-no-no",
     coordinates: [75.40251922607422, 41.357086181640625],
+  },
+
+  {
+    label: "'show me/you'",
+    nearestLyric: "Show me how",
+    coordinates: [66.32334899902344, 44.248374938964844],
   },
 
   {
@@ -1761,6 +1863,17 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
   },
 
   {
+    label: "'give it to me'",
+    nearestLyric: "You'll give it to me now",
+    coordinates: [64.80886840820312, 54.37820053100586],
+  },
+  {
+    label: "'thinking about you'",
+    nearestLyric: "Yeah, I been thinking about you",
+    coordinates: [62.91550827026367, 55.686702728271484],
+  },
+
+  {
     label: "Need",
     nearestLyric: "Lady, you know just what I need",
     coordinates: [66.44870042800903, 57.10960030555725],
@@ -2024,6 +2137,109 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
         coordinates: [69.90150213241577, 61.26959919929504],
       },
     ],
+  },
+
+  // STUFF IN THE MIDDLE OF THE CHART
+
+  {
+    label: "'open/close/walk through the door'",
+    nearestLyric: "Thinkin' no one could open the door",
+    coordinates: [51.57910919189453, 42.35673522949219],
+  },
+
+  {
+    label: "Starting, ending",
+    nearestLyric: "Let's start over",
+    coordinates: [61.139732360839844, 42.95952606201172],
+  },
+
+  {
+    label: "Stay, leave, run?",
+    nearestLyric: "If you leave tonight keep runnin'",
+    coordinates: [57.647071838378906, 46.17422866821289],
+    children: [
+      {
+        label: "'go (now)'",
+        nearestLyric: "Go now",
+        coordinates: [58.3583984375, 41.46441650390625],
+      },
+      {
+        label: "'before you go'",
+        nearestLyric: "So, before you go",
+        coordinates: [59.804664611816406, 41.7662467956543],
+      },
+
+      {
+        label: "Searching & finding",
+        nearestLyric: "Tried to find myself (Tried to find myself)",
+        coordinates: [59.81163024902344, 44.26219177246094],
+      },
+
+      {
+        label: "'leave' vs 'stay'",
+        nearestLyric: "So I'm leaving, yes I am (I'm leaving, yes I am)",
+        coordinates: [57.695289611816406, 45.580718994140625],
+      },
+
+      {
+        label: "Hiding 🙈",
+        nearestLyric: "As if I could ever hide",
+        coordinates: [54.66998291015625, 43.66585159301758],
+      },
+
+      {
+        label: "Run & Escape",
+        nearestLyric: "You better run, you better take cover",
+        coordinates: [52.4169807434082, 44.16438293457031],
+      },
+
+      {
+        label: "'go(ing) home'",
+        nearestLyric: "So, I'm going home",
+        coordinates: [54.75404357910156, 41.91556930541992],
+      },
+    ],
+  },
+
+  {
+    label: "'keep on [going]'",
+    nearestLyric: "Keep on pushin'",
+    coordinates: [55.8787727355957, 47.45001220703125],
+  },
+
+  {
+    label: "'what do/can I do?'",
+    nearestLyric: "What else am I supposed to do?",
+    coordinates: [69.27852630615234, 49.01771926879883],
+  },
+
+  {
+    label: "'done everything/nothing'",
+    nearestLyric: "I've done everything I tried to do",
+    coordinates: [66.99413299560547, 50.4101676940918],
+  },
+
+  {
+    label: "'nothing I can/can't do'",
+    nearestLyric: "There's nothin' you can't do (Okay)",
+    coordinates: [67.89753723144531, 49.330623626708984],
+  },
+
+  {
+    label: "'(not) easy'",
+    nearestLyric: "Don't you know, it's not easy",
+    coordinates: [63.642234802246094, 47.9278564453125],
+  },
+
+  {
+    label: "'(don't) stop'",
+    nearestLyric: "Now you know you need to stop",
+    coordinates: [60.17510986328125, 47.50941848754883],
+  },
+  {
+    label: "'(don't) give up'",
+    nearestLyric: "Don't give up on us, baby",
+    coordinates: [59.64838409423828, 50.47840118408203],
   },
 ];
 
