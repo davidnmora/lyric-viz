@@ -39,14 +39,12 @@ const MultiSelectDropdown = ({
   return (
     <>
       <h2>
-        <label htmlFor="multi-select">
-          Filter to a genre (note: can only do 1 filter at a time currently)
-        </label>
+        <label htmlFor="multi-select">Filter to one or more genres</label>
       </h2>
       <Select
         isMulti
         options={options}
-        placeholder="Choose categories"
+        placeholder="Choose genres"
         value={selectedValues}
         // @ts-ignore
         onChange={(newlySelectedValues: Array<never>) => {
