@@ -99,6 +99,20 @@ const MultiRangeSliderComp = ({
   );
 };
 
+const TextSearch = ({ plotRef }: { plotRef: any }) => {
+  const handleChange = (e: any) => {
+    console.log(e.target.value);
+  };
+  return (
+    <div style={{ paddingTop: 24 }}>
+      <h2>
+        <label htmlFor="input">Filter to one or more genres</label>
+      </h2>
+      <input type="text" onChange={handleChange} />
+    </div>
+  );
+};
+
 const Controls = ({
   rangeSliderProps,
   catagoricalField,
@@ -135,6 +149,7 @@ const Controls = ({
         Click me get current bbox
       </button>
       <MultiRangeSliderComp {...rangeSliderProps} />
+      <TextSearch plotRef={plotRef} />
       <MultiSelectDropdown
         field={catagoricalField}
         catagoricalEncoding={catagoricalEncoding}
