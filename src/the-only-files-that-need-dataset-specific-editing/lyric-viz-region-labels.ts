@@ -19,6 +19,13 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
     nearestLyric: "Let me show you what a thug got, born to die",
     coordinates: [40.17561340332031, 46.484615325927734],
   },
+
+  {
+    label: "'Ghetto' & 'Hood'",
+    nearestLyric: "It's an every day thing in the ghetto",
+    coordinates: [41.69123458862305, 45.15018844604492],
+  },
+
   {
     label: "'dip'",
     nearestLyric:
