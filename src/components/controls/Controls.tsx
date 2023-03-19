@@ -106,7 +106,7 @@ const TextSearch = ({ plotRef }: { plotRef: any }) => {
   return (
     <div style={{ paddingTop: 24 }}>
       <h2>
-        <label htmlFor="input">Filter to one or more genres</label>
+        <label htmlFor="input">Search the lyrics</label>
       </h2>
       <input type="text" onChange={handleChange} />
     </div>
