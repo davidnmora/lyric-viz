@@ -1,5 +1,6 @@
 export const CONTINUOUS_FIELD = "chart_debut_date_normalized_0_to_1";
 export const CATAGORICAL_FIELD = "generic_genre";
+export const TEXT_SEARCH_FIELD = "lyric_line";
 export const CATAGORICAL_ENCODING = "color";
 export const ANOTHER_CATAGORICAL_VAR_IN_ORDINAL_BANDS = "genre_position_band";
 export const ID_FIELD = "song_id";
