@@ -8,6 +8,7 @@ import {
   retrieveDomainForAnEncodedAestheticProperty,
   retrieveRangeForAnEncodedAestheticProperty,
 } from "../deepscatter/DeepScatterWrapper";
+import SongInspector from "../song-inspector/SongInspector";
 
 const MultiSelectDropdown = ({
   catagoricalEncoding,
@@ -170,6 +171,7 @@ const Controls = ({
         catagoricalEncoding={catagoricalEncoding}
         updateCatagoricalFilter={updateCatagoricalFilter}
       />
+      <SongInspector />
     </div>
   );
 };
