@@ -7,8 +7,7 @@ import React, {
 } from "react";
 // @ts-ignore
 import ScatterPlot from "./deepscatter-dist-for-ease-of-access-and-edit.js";
-import * as duckdb from "@duckdb/duckdb-wasm";
-import * as rd from "@duckdb/react-duckdb";
+import useDuckDB from "../../duckdb/useDuckDB";
 import { filterByTextSearchTerm } from "./deepscatter-and-duckdb-helpers";
 
 export type Labels = {
@@ -109,27 +108,7 @@ const DeepScatterWrapper = ({
   const chartParentId = "deep-scatter-parent-element-id";
   const chartParentRef = useRef(null);
 
-  const db: rd.Resolvable<
-    duckdb.AsyncDuckDB,
-    duckdb.InstantiationProgress,
-    string
-  > = rd.useDuckDB();
-  const resolveDB = rd.useDuckDBResolver();
-  const [connection, setConnection] = React.useState<
-    duckdb.AsyncDuckDBConnection | undefined
-  >(undefined);
-
-  // const { lastQueryResults, queryState, runQuery } = useSqlQuery(connection);
-
-  // After the database resolves, create a connection that can be
-  // used for issuing queries
-  React.useEffect(() => {
-    if (!db.resolving()) {
-      resolveDB()
-        .then((d) => d?.connect())
-        .then(setConnection);
-    }
-  }, [db]);
+  const { db, connection } = useDuckDB();
 
   useEffect(() => {
     if (db && connection && plotRef.current) {
