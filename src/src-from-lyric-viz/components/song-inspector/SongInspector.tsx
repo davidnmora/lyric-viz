@@ -70,10 +70,11 @@ export default () => {
       });
     }
   }, [connection, interactionState.clickedDataPoint]);
-
+  const { song, performer } = interactionState?.clickedDataPoint || {};
   return (
     <div style={{ overflow: "scroll", height: 600 }}>
-      <h2>Inspect Cliches for a song</h2>
+      <h2>Cliches for '{song}'</h2>
+      <h4>by {performer}</h4>
       {songLyricData.map((lyric: any, index: Number) => (
         <LyricLine key={index} {...lyric} />
       ))}
