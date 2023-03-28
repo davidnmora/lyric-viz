@@ -50,22 +50,26 @@ const LyricLine = ({
   );
 };
 
-export default ({ songId = "Shape Of YouEd Sheeran" }) => {
+export default () => {
   // temp
   const { interactionState } = React.useContext(DeepScatterContext);
-  const { db, connection } = useDuckDB({ context: ">>>>Song Inspector<<<<" });
+  const { connection } = useDuckDB({ context: ">>>>Song Inspector<<<<" });
   const [songLyricData, setSongLyricData] = React.useState<any>([]);
 
   React.useEffect(() => {
-    console.log("EFFECT", interactionState.searchtext);
-    if (db && connection) {
-      console.log("Ready to get cliches!");
-      getClicheDataForASong({ songId, db: connection }).then((d: any) => {
+    console.log("EFFECT", interactionState.clickedDataPoint);
+    const song_id = interactionState?.clickedDataPoint?.song_id;
+    if (connection && song_id) {
+      console.log("Ready to get cliches!", song_id);
+      getClicheDataForASong({
+        songId: song_id,
+        db: connection,
+      }).then((d: any) => {
         console.log("Fetched this:", d);
         setSongLyricData(d);
       });
     }
-  }, [db, connection, songId, interactionState.searchtext]);
+  }, [connection, interactionState.clickedDataPoint]);
 
   return (
     <div style={{ overflow: "scroll", height: 600 }}>

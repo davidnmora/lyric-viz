@@ -9,6 +9,7 @@ import React, {
 import ScatterPlot from "./deepscatter-dist-for-ease-of-access-and-edit.js";
 import useDuckDB from "../../duckdb/useDuckDB";
 import { filterByTextSearchTerm } from "./deepscatter-and-duckdb-helpers";
+import { DataPoint } from "src-from-lyric-viz/the-only-files-that-need-dataset-specific-editing/data-specefic-metadata.js";
 
 export type Labels = {
   features: Object;
@@ -19,6 +20,11 @@ export type Labels = {
 
 type TooltipHTMLGenerator = (point: any) => string;
 type DataPointClickHandler = (point: any) => void;
+
+export type InteractionState = {
+  searchtext: string;
+  clickedDataPoint?: DataPoint;
+};
 
 export const DeepScatterContext = createContext<any>({});
 
@@ -104,7 +110,9 @@ const DeepScatterWrapper = ({
   children: any;
 }) => {
   const [initialLoadComplete, setInitiaLoadComplete] = useState<boolean>(false);
-  const [interactionState, setInteractionState] = useState<any>({});
+  const [interactionState, setInteractionState] = useState<InteractionState>({
+    searchtext: "",
+  });
   const chartParentId = "deep-scatter-parent-element-id";
   const chartParentRef = useRef(null);
 
@@ -133,7 +141,14 @@ const DeepScatterWrapper = ({
       plotRef.current.plotAPI(prefs).finally(() => {
         console.log("... initial prefs set");
         setInitiaLoadComplete(true);
-        if (onClickDataPoint) _plot.click_function = onClickDataPoint;
+        if (onClickDataPoint)
+          _plot.click_function = (dataPoint: DataPoint) => {
+            onClickDataPoint(dataPoint);
+            setInteractionState((state) => ({
+              ...state,
+              clickedDataPoint: dataPoint,
+            }));
+          };
 
         _plot.add_labels(
           labels.features,
