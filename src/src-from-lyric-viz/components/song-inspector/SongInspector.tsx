@@ -55,19 +55,23 @@ export default () => {
   const { interactionState } = React.useContext(DeepScatterContext);
   const { connection } = useDuckDB({ context: ">>>>Song Inspector<<<<" });
   const [songLyricData, setSongLyricData] = React.useState<any>([]);
+  const [loading, setLoading] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     console.log("EFFECT", interactionState.clickedDataPoint);
     const song_id = interactionState?.clickedDataPoint?.song_id;
     if (connection && song_id) {
       console.log("Ready to get cliches!", song_id);
+      setLoading(true);
       getClicheDataForASong({
         songId: song_id,
         db: connection,
-      }).then((d: any) => {
-        console.log("Fetched this:", d);
-        setSongLyricData(d);
-      });
+      })
+        .then((d: any) => {
+          console.log("Fetched this:", d);
+          setSongLyricData(d);
+        })
+        .finally(() => setLoading(false));
     }
   }, [connection, interactionState.clickedDataPoint]);
   const { song, performer } = interactionState?.clickedDataPoint || {};
@@ -75,9 +79,13 @@ export default () => {
     <div style={{ overflow: "scroll", height: 600 }}>
       <h2>Cliches for '{song}'</h2>
       <h4>by {performer}</h4>
-      {songLyricData.map((lyric: any, index: Number) => (
-        <LyricLine key={index} {...lyric} />
-      ))}
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+        songLyricData.map((lyric: any, index: Number) => (
+          <LyricLine key={index} {...lyric} />
+        ))
+      )}
     </div>
   );
 };
