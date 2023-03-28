@@ -2,6 +2,10 @@ import * as duckdb from "@duckdb/duckdb-wasm";
 import * as rd from "@duckdb/react-duckdb";
 import { TEXT_SEARCH_FIELD } from "../../the-only-files-that-need-dataset-specific-editing/data-specefic-metadata";
 
+// This works I think only for double single-quotes? ie SQL doesn't like double double-quotes
+export const formatTextForSQL = (str: string) =>
+  str.replace(/\"/g, '""').replace(/\'/g, "''");
+
 const create_duckdb_copy = async (
   tile: any,
   db: any,

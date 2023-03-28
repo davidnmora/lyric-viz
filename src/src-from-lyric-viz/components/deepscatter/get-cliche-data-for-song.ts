@@ -1,4 +1,6 @@
 // @ts-nocheck
+import { formatTextForSQL } from "./deepscatter-and-duckdb-helpers";
+
 // TODO ^ add actual types
 export const getClicheDataForASong = async ({ songId, db }) => {
   // FORMATTING
@@ -49,7 +51,8 @@ export const getClicheDataForASong = async ({ songId, db }) => {
   const generateClicheQueryForATable =
     (songId, columns = "*") =>
     (tableName) => {
-      const searchTerm = `'%${songId}%'`;
+      const searchTerm = `'%${formatTextForSQL(songId)}%'`;
+      console.log(searchTerm);
       return `SELECT ${columns} FROM '${tableName}' WHERE song_id LIKE ${searchTerm}`;
     };
 
