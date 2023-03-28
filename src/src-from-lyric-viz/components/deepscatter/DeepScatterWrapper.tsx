@@ -108,7 +108,7 @@ const DeepScatterWrapper = ({
   const chartParentId = "deep-scatter-parent-element-id";
   const chartParentRef = useRef(null);
 
-  const { db, connection } = useDuckDB();
+  const { db, connection } = useDuckDB({ context: ">>>>WRAPPER<<<<" });
 
   useEffect(() => {
     if (db && connection && plotRef.current) {

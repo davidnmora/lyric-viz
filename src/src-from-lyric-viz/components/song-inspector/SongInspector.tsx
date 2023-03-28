@@ -53,7 +53,7 @@ const LyricLine = ({
 export default ({ songId = "Shape Of YouEd Sheeran" }) => {
   // temp
   const { interactionState } = React.useContext(DeepScatterContext);
-  const { db, connection } = useDuckDB();
+  const { db, connection } = useDuckDB({ context: ">>>>Song Inspector<<<<" });
   const [songLyricData, setSongLyricData] = React.useState<any>([]);
 
   React.useEffect(() => {

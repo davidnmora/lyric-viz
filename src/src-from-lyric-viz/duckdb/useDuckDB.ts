@@ -2,7 +2,7 @@ import React from "react";
 import * as duckdb from "@duckdb/duckdb-wasm";
 import * as rd from "@duckdb/react-duckdb";
 
-export default () => {
+export default ({ context }: { context?: string }) => {
   const db: rd.Resolvable<
     duckdb.AsyncDuckDB,
     duckdb.InstantiationProgress,
@@ -13,16 +13,23 @@ export default () => {
     duckdb.AsyncDuckDBConnection | undefined
   >(undefined);
 
-  // const { lastQueryResults, queryState, runQuery } = useSqlQuery(connection);
-
-  // After the database resolves, create a connection that can be
-  // used for issuing queries
   React.useEffect(() => {
-    if (!db.resolving()) {
+    console.log(`${context} useEffect db.status`, db.status);
+    if (
+      db.status === rd.ResolvableStatus.NONE ||
+      db.status === rd.ResolvableStatus.COMPLETED
+    ) {
+      console.log(context);
       resolveDB()
         .then((d) => d?.connect())
-        .then(setConnection);
+        .catch((e) => {
+          console.warn(e);
+        })
+        .then((d: any) => {
+          setConnection(d);
+          console.log(`${context} CONENCTION SET:`, d);
+        });
     }
-  }, [db]);
+  }, [db, db.status]);
   return { db, connection };
 };
