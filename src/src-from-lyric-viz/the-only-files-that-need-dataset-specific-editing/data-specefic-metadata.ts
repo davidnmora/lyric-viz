@@ -45,9 +45,10 @@ export const deepscatterInitialPrefs = {
   },
 };
 
-type DataPoint = {
+export type DataPoint = {
   x: Number;
   y: Number;
+  song_id: string;
   lyric_line: string;
   song: string;
   performer: string;

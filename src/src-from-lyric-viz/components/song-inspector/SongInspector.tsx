@@ -2,25 +2,22 @@ import React from "react";
 import useDuckDB from "../../duckdb/useDuckDB";
 import { DeepScatterContext } from "../deepscatter/DeepScatterWrapper";
 import { getClicheDataForASong } from "../deepscatter/get-cliche-data-for-song";
-
-type LyricRowFromDB = {
-  lyric_line: string;
-  performer: string;
-  song: string;
-};
+import { DataPoint } from "src-from-lyric-viz/the-only-files-that-need-dataset-specific-editing/data-specefic-metadata";
 
 const SimilarLyrics = ({
   title,
   lyrics,
 }: {
   title: string;
-  lyrics: Array<LyricRowFromDB>;
+  lyrics: Array<DataPoint>;
 }) => {
   return (
     <div style={{ borderLeft: "1px solid gray" }}>
       <h5>{title}</h5>
-      {lyrics.map(({ lyric_line }: { lyric_line: string }) => (
-        <div style={{ fontSize: 10, color: "grey" }}>{lyric_line}</div>
+      {lyrics.map((dataPoint: DataPoint, index) => (
+        <div key={index} style={{ fontSize: 10, color: "grey" }}>
+          {dataPoint.lyric_line}
+        </div>
       ))}
     </div>
   );
@@ -31,9 +28,9 @@ const LyricLine = ({
   similarAfter,
   lyricLineRow,
 }: {
-  similarBefore: Array<LyricRowFromDB>;
-  similarAfter: Array<LyricRowFromDB>;
-  lyricLineRow: LyricRowFromDB;
+  similarBefore: Array<DataPoint>;
+  similarAfter: Array<DataPoint>;
+  lyricLineRow: DataPoint;
 }) => {
   const similarLyricsExist = !!(similarBefore.length || similarAfter.length);
   return (
@@ -73,8 +70,8 @@ export default ({ songId = "Shape Of YouEd Sheeran" }) => {
   return (
     <div style={{ overflow: "scroll", height: 600 }}>
       <h2>Inspect Cliches for a song</h2>
-      {songLyricData.map((lyric: any) => (
-        <LyricLine {...lyric} />
+      {songLyricData.map((lyric: any, index: Number) => (
+        <LyricLine key={index} {...lyric} />
       ))}
     </div>
   );
