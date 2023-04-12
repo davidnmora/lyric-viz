@@ -92,7 +92,7 @@ function App() {
             catagoricalEncoding={CATAGORICAL_ENCODING}
             updateCatagoricalFilter={updateCatagoricalFilter}
           />
-          {/* <Scrollytelling updatePlotOnStepChange={updatePlotOnStepChange} /> */}
+          <Scrollytelling updatePlotOnStepChange={updatePlotOnStepChange} />
         </DeepScatterWrapper>
       </div>
     </>

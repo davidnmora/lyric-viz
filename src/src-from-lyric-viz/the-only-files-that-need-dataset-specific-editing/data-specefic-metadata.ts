@@ -3,6 +3,7 @@ export const CATAGORICAL_FIELD = "generic_genre";
 export const TEXT_SEARCH_FIELD = "lyric_line";
 export const CATAGORICAL_ENCODING = "color";
 export const ANOTHER_CATAGORICAL_VAR_IN_ORDINAL_BANDS = "genre_position_band";
+export const CLICHE_CONTINUOUS_FIELD = "num_before";
 export const ID_FIELD = "song_id";
 export const X_TEXT_EMBEDDING = "x";
 export const Y_TEXT_EMBEDDING = "y";

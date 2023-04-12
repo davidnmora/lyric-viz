@@ -126,7 +126,7 @@ const TextSearch = ({ plotRef }: { plotRef: any }) => {
   );
 };
 
-export const CopyBoundingBox = (plotRef: any) => (
+export const CopyBoundingBox = ({ plotRef }: { plotRef: any }) => (
   <button
     onClick={() => {
       if (plotRef.current) {
@@ -164,6 +164,7 @@ const Controls = ({
         padding: 24,
       }}
     >
+      <CopyBoundingBox plotRef={plotRef} />
       <MultiRangeSliderComp {...rangeSliderProps} />
       <TextSearch plotRef={plotRef} />
       <MultiSelectDropdown
