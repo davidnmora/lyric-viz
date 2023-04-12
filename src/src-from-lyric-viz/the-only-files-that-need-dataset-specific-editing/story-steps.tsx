@@ -4,11 +4,12 @@ import {
 } from "../scrollytelling/scrollytelling-utils";
 import {
   ANOTHER_CATAGORICAL_VAR_IN_ORDINAL_BANDS,
-  CLICHE_CONTINUOUS_FIELD,
+  LYRIC_CLICHE_COUNT_INTEGER_FIELD,
   CONTINUOUS_FIELD,
   ID_FIELD,
   X_TEXT_EMBEDDING,
   Y_TEXT_EMBEDDING,
+  SONG_AVG_CLICHENESS_CONTINUOUS_FIELD,
 } from "./data-specefic-metadata";
 
 const mapLocations = {
@@ -35,7 +36,7 @@ const prefsUpdates = {
       x: { field: X_TEXT_EMBEDDING },
       y: { field: Y_TEXT_EMBEDDING },
       color: {
-        field: CLICHE_CONTINUOUS_FIELD,
+        field: LYRIC_CLICHE_COUNT_INTEGER_FIELD,
         domain: [-4, 14], // lie about lowerbound so colors fall in a easier to see range
         range: "blues", // for context, this is a D3 color set
       },
@@ -70,6 +71,39 @@ const prefsUpdates = {
       },
     },
   },
+  lyicClicheOverTime: {
+    encoding: {
+      y: {
+        field: LYRIC_CLICHE_COUNT_INTEGER_FIELD,
+        domain: [0, 14],
+        range: [0, 100],
+      },
+      x: {
+        field: CONTINUOUS_FIELD,
+      },
+      jitter_radius: {
+        constant: 0.01,
+        method: "uniform",
+      },
+      jitter_speed: {
+        constant: 0,
+      },
+    },
+  },
+  songClicheOverTime: {
+    encoding: {
+      y: {
+        field: SONG_AVG_CLICHENESS_CONTINUOUS_FIELD,
+        domain: [0, 14],
+        range: [0, 100],
+      },
+      x: {
+        field: CONTINUOUS_FIELD,
+      },
+      jitter_radius: {},
+      jitter_speed: {},
+    },
+  },
 };
 
 const labeledSteps: { [key: string]: Omit<StoryStep, "index"> } = {
@@ -89,6 +123,16 @@ const labeledSteps: { [key: string]: Omit<StoryStep, "index"> } = {
     content: "Color each lyric by how cliche it is",
     zoomTo: mapLocations.overview,
     prefsUpdate: prefsUpdates.xyWithClicheColorEncoded,
+  },
+  lyicClicheOverTime: {
+    content: "Now let's see how cliche individual lyrics havae been over time",
+    // zoomTo: mapLocations.overview,
+    prefsUpdate: prefsUpdates.lyicClicheOverTime,
+  },
+  songClicheOverTime: {
+    content: "Now let's just look at the song level",
+    // zoomTo: mapLocations.overview,
+    prefsUpdate: prefsUpdates.songClicheOverTime,
   },
   // timeOnTheXAndGenreBinOnY: {
   //   content:
