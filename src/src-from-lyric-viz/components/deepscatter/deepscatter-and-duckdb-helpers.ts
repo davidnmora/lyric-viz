@@ -59,7 +59,7 @@ const addTextSearchAsyncTransformationToPlot = (
     // Get the regex query out of duckdb.
     const key = tile.key;
     const value = await connection.query(
-      `SELECT regexp_matches(${TEXT_SEARCH_FIELD}, '${searchterm}')::FLOAT AS "${searchterm}" FROM "${key}"`
+      `SELECT regexp_matches(${TEXT_SEARCH_FIELD}, '${searchterm}', 'i')::FLOAT AS "${searchterm}" FROM "${key}"`
     );
     // Grab just the column called 'searchterm' and convert it to
     // a floating point array. DuckDB returns multi-record-batch chunks,
