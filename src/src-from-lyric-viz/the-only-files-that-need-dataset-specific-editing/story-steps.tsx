@@ -36,7 +36,7 @@ const prefsUpdates = {
       x: { field: X_TEXT_EMBEDDING },
       y: { field: Y_TEXT_EMBEDDING },
       color: {
-        field: LYRIC_CLICHE_COUNT_INTEGER_FIELD,
+        field: SONG_AVG_CLICHENESS_CONTINUOUS_FIELD,
         domain: [-4, 14], // lie about lowerbound so colors fall in a easier to see range
         range: "blues", // for context, this is a D3 color set
       },
