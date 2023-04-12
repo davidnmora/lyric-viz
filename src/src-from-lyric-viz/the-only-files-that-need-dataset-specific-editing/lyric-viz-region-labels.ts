@@ -70,6 +70,12 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
   },
 
   {
+    label: "⚔️ War",
+    nearestLyric: "Win a battle you never fought",
+    coordinates: [53.323795318603516, 51.49806594848633],
+  },
+
+  {
     label: "Playing games",
     nearestLyric: "Baby, oh-oh, quit playing games",
     coordinates: [54.63346862792969, 51.35596466064453],
@@ -84,6 +90,12 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
     label: "'hold you'",
     nearestLyric: "If I could just hold you",
     coordinates: [52.28587341308594, 51.44916534423828],
+  },
+
+  {
+    label: "💇🏾‍♂️ Hair",
+    nearestLyric: "Well I like the way your hair falls in your face",
+    coordinates: [48.106483459472656, 50.366851806640625],
   },
 
   {
