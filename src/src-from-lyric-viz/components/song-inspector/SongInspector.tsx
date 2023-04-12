@@ -2,7 +2,7 @@ import React from "react";
 import useDuckDB from "../../duckdb/useDuckDB";
 import { DeepScatterContext } from "../deepscatter/DeepScatterWrapper";
 import { getClicheDataForASong } from "../deepscatter/get-cliche-data-for-song";
-import { DataPoint } from "src-from-lyric-viz/the-only-files-that-need-dataset-specific-editing/data-specefic-metadata";
+import type { DataPoint } from "../../the-only-files-that-need-dataset-specific-editing/data-specefic-metadata";
 
 const SimilarLyrics = ({
   title,
