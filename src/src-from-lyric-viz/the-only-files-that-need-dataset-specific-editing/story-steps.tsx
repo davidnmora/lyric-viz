@@ -20,6 +20,19 @@ const mapLocations = {
   },
 };
 
+const colorEncodings = {
+  lyricCliche: {
+    field: LYRIC_CLICHE_COUNT_INTEGER_FIELD,
+    domain: [-4, 11], // lie about lowerbound so colors fall in a easier to see range
+    range: "blues", // for context, this is a D3 color set
+  },
+  songCliche: {
+    field: SONG_AVG_CLICHENESS_CONTINUOUS_FIELD,
+    domain: [-4, 11], // lie about lowerbound so colors fall in a easier to see range
+    range: "blues", // for context, this is a D3 color set
+  },
+};
+
 const prefsUpdates = {
   noFilters: { encoding: { filter: {}, filter2: {}, jitter_radius: {} } },
   xyEncodingNoFilters: {
@@ -35,11 +48,7 @@ const prefsUpdates = {
     encoding: {
       x: { field: X_TEXT_EMBEDDING },
       y: { field: Y_TEXT_EMBEDDING },
-      color: {
-        field: SONG_AVG_CLICHENESS_CONTINUOUS_FIELD,
-        domain: [-4, 14], // lie about lowerbound so colors fall in a easier to see range
-        range: "blues", // for context, this is a D3 color set
-      },
+      color: colorEncodings.lyricCliche,
       filter: null,
       filter2: null,
       jitter_radius: null,
@@ -81,6 +90,7 @@ const prefsUpdates = {
       x: {
         field: CONTINUOUS_FIELD,
       },
+      color: colorEncodings.lyricCliche,
       jitter_radius: {
         constant: 0.01,
         method: "uniform",
@@ -100,6 +110,7 @@ const prefsUpdates = {
       x: {
         field: CONTINUOUS_FIELD,
       },
+      color: colorEncodings.songCliche,
       jitter_radius: {},
       jitter_speed: {},
     },
