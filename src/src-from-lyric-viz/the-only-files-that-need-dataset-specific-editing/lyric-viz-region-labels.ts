@@ -18,6 +18,13 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
     label: "Gang & Crime",
     nearestLyric: "Let me show you what a thug got, born to die",
     coordinates: [40.17561340332031, 46.484615325927734],
+    children: [
+      {
+        label: "'thug'",
+        nearestLyric: "My thug appeal?",
+        coordinates: [40.16249084472656, 46.4525032043457],
+      },
+    ],
   },
 
   {
@@ -510,9 +517,15 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
   },
 
   {
+    label: "'sexy'",
+    nearestLyric: "Ha ha! Sexy sexy, ha ha! Sexy sexy",
+    coordinates: [47.702877044677734, 54.87351989746094],
+  },
+
+  {
     label: "Respect",
-    nearestLyric: "A little respect",
-    coordinates: [43.72726821899414, 53.55818557739258],
+    nearestLyric: "My respect for you immense",
+    coordinates: [43.744529724121094, 53.36800003051758],
   },
 
   {
@@ -2186,6 +2199,12 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
         label: "'before you go'",
         nearestLyric: "So, before you go",
         coordinates: [59.804664611816406, 41.7662467956543],
+      },
+
+      {
+        label: "'I want (you) to stay'",
+        nearestLyric: "I want you to stay (Want you to stay)",
+        coordinates: [58.17368698120117, 46.763023376464844],
       },
 
       {
