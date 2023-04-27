@@ -145,16 +145,16 @@ const labeledSteps: { [key: string]: Omit<StoryStep, "index"> } = {
     // zoomTo: mapLocations.overview,
     prefsUpdate: prefsUpdates.songClicheOverTime,
   },
-  // timeOnTheXAndGenreBinOnY: {
-  //   content:
-  //     "There are other ways to view visualize the lyrics: here the the X-axis is time, genre is on the Y.",
-  //   zoomTo: mapLocations.overview,
-  //   prefsUpdate: prefsUpdates.timeOnTheXAndGenreBinOnY,
-  // },
+  timeOnTheXAndGenreBinOnY: {
+    content: "Here the the X-axis is time, genre is on the Y.",
+    zoomTo: mapLocations.overview,
+    prefsUpdate: prefsUpdates.timeOnTheXAndGenreBinOnY,
+  },
 };
 
 const storySteps: Array<Omit<StoryStep, "index">> = [
   labeledSteps.zoomedOutMap,
+  labeledSteps.timeOnTheXAndGenreBinOnY,
   labeledSteps.onMyKnees,
   labeledSteps.xyWithClicheColorEncoded,
   labeledSteps.lyicClicheOverTime,

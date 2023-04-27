@@ -24,6 +24,12 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
         nearestLyric: "My thug appeal?",
         coordinates: [40.16249084472656, 46.4525032043457],
       },
+
+      {
+        label: "'gangstas'",
+        nearestLyric: "Gangstas (gangstas)",
+        coordinates: [40.870277404785156, 46.029441833496094],
+      },
     ],
   },
 
@@ -664,6 +670,12 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
     label: "Guns 🔫",
     nearestLyric: "Still'll shoot (Shoot up, brrt, shit)",
     coordinates: [45.09806823730469, 46.64035415649414],
+  },
+
+  {
+    label: "👮 Police",
+    nearestLyric: "High sheriff and police coming after me",
+    coordinates: [46.49791717529297, 46.05323028564453],
   },
 
   {

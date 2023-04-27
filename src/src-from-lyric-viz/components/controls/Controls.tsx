@@ -159,7 +159,7 @@ const Controls = ({
     <div
       style={{
         position: "fixed",
-        zIndex: 100000000,
+        zIndex: 400,
         width: 350,
         padding: 24,
       }}

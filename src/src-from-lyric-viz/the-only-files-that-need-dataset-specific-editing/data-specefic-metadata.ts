@@ -64,9 +64,13 @@ export type DataPoint = {
 };
 
 export const tooltipHTML = (point: DataPoint): string => {
+  // @ts-ignore
+  const year = new Date(point.chart_debut).getYear() + 1900;
   return `
-    <div style="width: 400px; z-index: 99;">
-      <h4>${point.lyric_line}</h4>
+    <div style="width: 400px; z-index: 1000;">
+      <span></span>
+      <h4>(${year}) ${point.lyric_line}</h4>
+      
       <div>${point.song}</div>
       <div>${point.performer}</div>
       <div>${point.generic_genre}</div>

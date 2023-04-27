@@ -26,7 +26,7 @@ const Scrollytelling = ({
     <div
       style={{
         float: "right",
-        zIndex: 10000,
+        zIndex: 450,
         width: SCROLL_AREA_WIDTH,
         position: "relative",
 
