@@ -499,6 +499,12 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
   },
 
   {
+    label: "'I was born...'",
+    nearestLyric: "I was born this way, yeah",
+    coordinates: [50.884368896484375, 56.82439041137695],
+  },
+
+  {
     label: "Smile 😀",
     nearestLyric: "I could smile for a while",
     coordinates: [50.80093765258789, 57.388336181640625],
