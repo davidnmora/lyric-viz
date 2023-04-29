@@ -146,6 +146,7 @@ export function configure(params) {
             from: "./static/favicons",
             to: "./static/favicons",
           },
+          { from: "./deepscatter-tiles", to: "./deepscatter-tiles" },
           /*{
             from: "../duckdb-wasm/docs",
             to: "./docs",

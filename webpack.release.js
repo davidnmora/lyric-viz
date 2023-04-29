@@ -5,7 +5,7 @@ import path from "path";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const base = configure({
-  buildDir: path.resolve(__dirname, "./build/release"),
+  buildDir: path.resolve(__dirname, "./build"),
   tsLoaderOptions: {
     allowTsInNodeModules: true,
     compilerOptions: {

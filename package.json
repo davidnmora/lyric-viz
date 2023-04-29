@@ -3,7 +3,7 @@
   "homepage": "https://davidnmora.github.io/lyric-viz",
   "version": "1.0.0",
   "description": "Visualizing Top 10 Billboard Hits from 1958-2022",
-  "author": "David Mora <davidnmoraa@gmail.com>",
+  "author": "David Mora <davidnmora@gmail.com>",
   "private": true,
   "scripts": {
     "start": "webpack serve --config webpack.debug.js",

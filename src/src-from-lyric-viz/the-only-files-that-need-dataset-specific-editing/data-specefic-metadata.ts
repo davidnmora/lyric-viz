@@ -12,16 +12,12 @@ export const Y_TEXT_EMBEDDING = "y";
 export const CONTINUOUS_LOWER_BOUND = 0;
 export const CONTINUOUS_UPPER_BOUND = 100;
 
-export const TILES_FOLDER_NAME_IN_PUBLIC = "deepscatter-tiles";
-
-// const ROOT_REPO_NAME = "ducky-aka-react-duckdb-demo"; // N0TE: served, not from "/", but from "/lyric-viz/" on gh-pages
+export const TILES_FOLDER_NAME = "deepscatter-tiles";
 
 export const deepscatterInitialPrefs = {
-  // source_url: `https://benschmidt.org/arxiv/`,
-  // source_url: `${window.location.origin}/${ROOT_REPO_NAME}/${TILES_FOLDER_NAME_IN_PUBLIC}`, // tiles live in /public in react app
-  // TODO: I'm fairly sure we want to serve from THIS repo, not some seperate URL. If so, we need to figure out how to
-  // make an actual public folder.
-  source_url: `https://davidnmora.github.io/lyric-viz/deepscatter-tiles`,
+  // N0TE: served, not from "/", but from "/lyric-viz/" on gh-pages, hence the window.location.href
+  source_url: `${window.location.href}${TILES_FOLDER_NAME}`, // tiles live in /public in react app
+  // source_url: `https://davidnmora.github.io/lyric-viz/deepscatter-tiles`,
   max_points: 500000, // a full cap.
   zoom_balance: 0.7, // Rate at which points increase size. https://observablehq.com/@bmschmidt/zoom-strategies-for-huge-scatterplots-with-three-js
   point_size: 1, // Default point size before application of size scaling
