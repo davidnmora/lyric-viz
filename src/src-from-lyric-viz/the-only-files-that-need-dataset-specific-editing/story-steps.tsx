@@ -131,7 +131,8 @@ const labeledSteps: { [key: string]: Omit<StoryStep, "index"> } = {
     prefsUpdate: prefsUpdates.xyEncodingNoFilters,
   },
   xyWithClicheColorEncoded: {
-    content: "Color each lyric by how cliche it is",
+    content:
+      "Color each lyric how based on how many near neighbors it has in its higher higher dimensional embedding. A rough measure of 'cliche-ness.'",
     zoomTo: mapLocations.overview,
     prefsUpdate: prefsUpdates.xyWithClicheColorEncoded,
   },
@@ -157,9 +158,6 @@ const storySteps: Array<Omit<StoryStep, "index">> = [
   labeledSteps.timeOnTheXAndGenreBinOnY,
   labeledSteps.onMyKnees,
   labeledSteps.xyWithClicheColorEncoded,
-  labeledSteps.lyicClicheOverTime,
-  labeledSteps.songClicheOverTime,
-  // labeledSteps.timeOnTheXAndGenreBinOnY,
 ];
 
 export default addStepIndexes(storySteps);

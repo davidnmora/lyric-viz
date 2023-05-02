@@ -3,7 +3,7 @@ export const CATAGORICAL_FIELD = "generic_genre";
 export const TEXT_SEARCH_FIELD = "lyric_line";
 export const CATAGORICAL_ENCODING = "color";
 export const ANOTHER_CATAGORICAL_VAR_IN_ORDINAL_BANDS = "genre_position_band";
-export const LYRIC_CLICHE_COUNT_INTEGER_FIELD = "num_before";
+export const LYRIC_CLICHE_COUNT_INTEGER_FIELD = "near_neighbors_count";
 export const SONG_AVG_CLICHENESS_CONTINUOUS_FIELD = "num_before_song_avg";
 export const ID_FIELD = "song_id";
 export const X_TEXT_EMBEDDING = "x";
@@ -46,7 +46,7 @@ export const deepscatterInitialPrefs = {
 export type DataPoint = {
   x: Number;
   y: Number;
-  song_id: string;
+  song_id: string; // may drop this, it's redundant
   lyric_line: string;
   song: string;
   performer: string;
@@ -93,11 +93,11 @@ export const onClickDataPoint = (point: DataPoint) => {
     document.body.removeChild(TempText);
   }
 
-  // const youtubeSearchURL =
-  //   `https://www.youtube.com/results?search_query=${point.song}+by+${point.performer}`.replace(
-  //     " ",
-  //     "+"
-  //   );
+  const youtubeSearchURL =
+    `https://www.youtube.com/results?search_query=${point.song}+by+${point.performer}`.replace(
+      " ",
+      "+"
+    );
   // @ts-ignore
   const labelStub = `
   {
@@ -108,5 +108,5 @@ export const onClickDataPoint = (point: DataPoint) => {
   `;
   console.log(labelStub);
   addToClipboard(labelStub);
-  // window.open(youtubeSearchURL, "_blank");
+  window.open(youtubeSearchURL, "_blank");
 };
