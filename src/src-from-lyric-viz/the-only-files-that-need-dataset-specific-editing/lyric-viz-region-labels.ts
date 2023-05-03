@@ -63,10 +63,21 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
   },
 
   {
+    label: "'savage'",
+    nearestLyric: "Bitch, I'm a savage, yeah",
+    coordinates: [37.10366439819336, 50.10759353637695],
+  },
+
+  {
     label: "💎 Bling",
     nearestLyric: "And if that diamond ring won't shine",
     coordinates: [38.38007354736328, 51.97138214111328],
     children: [
+      {
+        label: "Gold",
+        nearestLyric: "He loves only gold",
+        coordinates: [38.12843322753906, 50.96171188354492],
+      },
       {
         label: "'diamonds'",
         nearestLyric:
@@ -770,9 +781,34 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
   },
 
   {
-    label: "American South",
-    nearestLyric: "Gettin' born in the state of Mississippi",
-    coordinates: [40.71299743652344, 41.144065856933594],
+    label: "Places (esp. USA)",
+    nearestLyric: "Tulsa, Austin, Oklahoma City, Seattle, San Francisco too",
+    coordinates: [41.646575927734375, 42.24270248413086],
+    children: [
+      {
+        label: "American South",
+        nearestLyric: "Gettin' born in the state of Mississippi",
+        coordinates: [40.71299743652344, 41.144065856933594],
+      },
+
+      {
+        label: "California",
+        nearestLyric: "California girls, we're undeniable",
+        coordinates: [41.631019592285156, 41.854366302490234],
+      },
+
+      {
+        label: "New York",
+        nearestLyric: "New York (Yeah), New York (Uh)",
+        coordinates: [41.28362274169922, 42.677940368652344],
+      },
+
+      {
+        label: "The Country",
+        nearestLyric: "Thank God I'm a country boy",
+        coordinates: [42.21088790893555, 42.34172058105469],
+      },
+    ],
   },
 
   {
