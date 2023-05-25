@@ -684,6 +684,18 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
   },
 
   {
+    label: "🐱",
+    nearestLyric: "W-w-w-wet ass pussy",
+    coordinates: [43.61240768432617, 49.30723571777344],
+  },
+
+  {
+    label: "'bad bitch'",
+    nearestLyric: "You should want a bad bitch like this (Huh?)",
+    coordinates: [45.087772369384766, 49.07155227661133],
+  },
+
+  {
     label: "Guns 🔫",
     nearestLyric: "Still'll shoot (Shoot up, brrt, shit)",
     coordinates: [45.09806823730469, 46.64035415649414],

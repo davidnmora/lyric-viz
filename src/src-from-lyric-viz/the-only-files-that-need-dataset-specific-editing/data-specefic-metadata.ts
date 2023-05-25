@@ -52,11 +52,18 @@ export type DataPoint = {
   performer: string;
   generic_genre: string;
   chart_debut: string; // I think? maybe it's been cast when the parquet file is read?
+  gender: "m" | "f" | "x";
   // cliche stuff
   num_before: Number;
   num_after: Number;
   num_before_song_avg: Number;
   num_after_song_avg: Number;
+};
+
+const GENDER_TO_NUM_CONVERSION = {
+  x: "mixed",
+  f: "female",
+  m: "male",
 };
 
 export const tooltipHTML = (point: DataPoint): string => {
@@ -70,11 +77,7 @@ export const tooltipHTML = (point: DataPoint): string => {
       <div>${point.song}</div>
       <div>${point.performer}</div>
       <div>${point.generic_genre}</div>
-      <h4>Cliches</h4>
-      <div>before: ${point.num_before}</div>
-      <div>song avg: ${point.num_before_song_avg}</div>
-      <div>after: ${point.num_after}</div>
-      <div>song avg: ${point.num_after_song_avg}</div>
+      <div>Gender: ${GENDER_TO_NUM_CONVERSION[point.gender]}</div>
       
       <div>${new Date(point.chart_debut).getFullYear()}</div>
     </div>

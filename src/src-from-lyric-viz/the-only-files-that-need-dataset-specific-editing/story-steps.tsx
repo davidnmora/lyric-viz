@@ -26,6 +26,11 @@ const colorEncodings = {
     domain: [-4, 11], // lie about lowerbound so colors fall in a easier to see range
     range: "blues", // for context, this is a D3 color set
   },
+  gender: {
+    field: "gender",
+    // domain: [0, 1], // lie about lowerbound so colors fall in a easier to see range
+    range: "set1", // for context, this is a D3 color set
+  },
   songCliche: {
     field: SONG_AVG_CLICHENESS_CONTINUOUS_FIELD,
     domain: [-4, 11], // lie about lowerbound so colors fall in a easier to see range
@@ -35,6 +40,7 @@ const colorEncodings = {
 
 const prefsUpdates = {
   noFilters: { encoding: { filter: {}, filter2: {}, jitter_radius: {} } },
+  gender: { encoding: { color: colorEncodings.gender } },
   xyEncodingNoFilters: {
     encoding: {
       x: { field: X_TEXT_EMBEDDING },
@@ -118,6 +124,11 @@ const prefsUpdates = {
 };
 
 const labeledSteps: { [key: string]: Omit<StoryStep, "index"> } = {
+  gender: {
+    content: "Gender",
+    zoomTo: mapLocations.overview,
+    prefsUpdate: prefsUpdates.gender,
+  },
   zoomedOutMap: {
     content:
       "Welcome to the map: each dot is 1 of 166,000 lyric lines, arranged by topic via sentence embedding. Click a dot to view the cliche's for the song.",
@@ -154,6 +165,7 @@ const labeledSteps: { [key: string]: Omit<StoryStep, "index"> } = {
 };
 
 const storySteps: Array<Omit<StoryStep, "index">> = [
+  labeledSteps.gender,
   labeledSteps.zoomedOutMap,
   labeledSteps.timeOnTheXAndGenreBinOnY,
   labeledSteps.onMyKnees,
