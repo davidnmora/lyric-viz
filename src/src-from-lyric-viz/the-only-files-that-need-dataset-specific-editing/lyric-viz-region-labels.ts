@@ -30,6 +30,13 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
         nearestLyric: "Gangstas (gangstas)",
         coordinates: [40.870277404785156, 46.029441833496094],
       },
+
+      {
+        label: "'gang'",
+        nearestLyric:
+          "You was never gang, gang, gang, gang, you was never one of us",
+        coordinates: [40.93622589111328, 47.310096740722656],
+      },
     ],
   },
 
@@ -54,6 +61,18 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
     label: "'chain'",
     nearestLyric: "I'm added to your chain, chain, chain",
     coordinates: [39.93423843383789, 51.98819351196289],
+  },
+
+  {
+    label: "'purple'",
+    nearestLyric: "Purple, purple gucci bag",
+    coordinates: [41.994361877441406, 51.543453216552734],
+  },
+
+  {
+    label: "🫖 Coffee & tea",
+    nearestLyric: "Oh, I like coffee and I like tea",
+    coordinates: [41.4899787902832, 52.45888137817383],
   },
 
   {
@@ -602,6 +621,12 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
   },
 
   {
+    label: "Summer",
+    nearestLyric: "Middle of the summer",
+    coordinates: [39.0838508605957, 57.34968566894531],
+  },
+
+  {
     label: "Alcohol",
     nearestLyric: "Got a Hennessy in my hand",
     coordinates: [40.904476165771484, 49.80786895751953],
@@ -703,8 +728,8 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
 
   {
     label: "👮 Police",
-    nearestLyric: "High sheriff and police coming after me",
-    coordinates: [46.49791717529297, 46.05323028564453],
+    nearestLyric: "The cops patrollin'",
+    coordinates: [46.34176254272461, 46.72065734863281],
   },
 
   {
@@ -714,9 +739,9 @@ const RAW_LABELS_NOT_IN_GEOJSON_FORM: Array<RawLabel> = [
   },
 
   {
-    label: "'hit me'",
-    nearestLyric: "Hit me (Hit me!)",
-    coordinates: [47.58660888671875, 47.993770599365234],
+    label: "Shoes 👠",
+    nearestLyric: "The shoes on my feet, I bought 'em",
+    coordinates: [46.96204376220703, 48.02771759033203],
   },
 
   {
