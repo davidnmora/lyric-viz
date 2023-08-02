@@ -10,6 +10,7 @@ import {
   X_TEXT_EMBEDDING,
   Y_TEXT_EMBEDDING,
   SONG_AVG_CLICHENESS_CONTINUOUS_FIELD,
+  SONG_TYPE_FIELD,
 } from "./data-specefic-metadata";
 
 const mapLocations = {
@@ -26,6 +27,11 @@ const colorEncodings = {
     domain: [-4, 11], // lie about lowerbound so colors fall in a easier to see range
     range: "blues", // for context, this is a D3 color set
   },
+  loveSongLabel: {
+    field: SONG_TYPE_FIELD,
+    // domain: [0, 1], // lie about lowerbound so colors fall in a easier to see range
+    range: "set1", // for context, this is a D3 color set
+  },
   gender: {
     field: "gender",
     // domain: [0, 1], // lie about lowerbound so colors fall in a easier to see range
@@ -41,6 +47,7 @@ const colorEncodings = {
 const prefsUpdates = {
   noFilters: { encoding: { filter: {}, filter2: {}, jitter_radius: {} } },
   gender: { encoding: { color: colorEncodings.gender } },
+  loveSongLabel: { encoding: { color: colorEncodings.loveSongLabel } },
   xyEncodingNoFilters: {
     encoding: {
       x: { field: X_TEXT_EMBEDDING },
@@ -124,6 +131,12 @@ const prefsUpdates = {
 };
 
 const labeledSteps: { [key: string]: Omit<StoryStep, "index"> } = {
+  loveSongLabel: {
+    content:
+      "GPT3 labeled Song type: 'love', 'sex', or 'no' (aka none of those)",
+    zoomTo: mapLocations.overview,
+    prefsUpdate: prefsUpdates.loveSongLabel,
+  },
   gender: {
     content: "Gender",
     zoomTo: mapLocations.overview,
@@ -165,6 +178,7 @@ const labeledSteps: { [key: string]: Omit<StoryStep, "index"> } = {
 };
 
 const storySteps: Array<Omit<StoryStep, "index">> = [
+  labeledSteps.loveSongLabel,
   labeledSteps.gender,
   labeledSteps.zoomedOutMap,
   labeledSteps.timeOnTheXAndGenreBinOnY,

@@ -5,6 +5,7 @@ export const CATAGORICAL_ENCODING = "color";
 export const ANOTHER_CATAGORICAL_VAR_IN_ORDINAL_BANDS = "genre_position_band";
 export const LYRIC_CLICHE_COUNT_INTEGER_FIELD = "near_neighbors_count";
 export const SONG_AVG_CLICHENESS_CONTINUOUS_FIELD = "num_before_song_avg";
+export const SONG_TYPE_FIELD = "gpt3_song_is_love_or_sex_or_no";
 export const ID_FIELD = "song_id";
 export const X_TEXT_EMBEDDING = "x";
 export const Y_TEXT_EMBEDDING = "y";
@@ -53,6 +54,7 @@ export type DataPoint = {
   generic_genre: string;
   chart_debut: string; // I think? maybe it's been cast when the parquet file is read?
   gender: "m" | "f" | "x";
+  gpt3_song_is_love_or_sex_or_no: "love" | "sex" | "no";
   // cliche stuff
   num_before: Number;
   num_after: Number;
@@ -78,6 +80,7 @@ export const tooltipHTML = (point: DataPoint): string => {
       <div>${point.performer}</div>
       <div>${point.generic_genre}</div>
       <div>Gender: ${GENDER_TO_NUM_CONVERSION[point.gender]}</div>
+      <div>Song type: ${point.gpt3_song_is_love_or_sex_or_no}</div>
       
       <div>${new Date(point.chart_debut).getFullYear()}</div>
     </div>
